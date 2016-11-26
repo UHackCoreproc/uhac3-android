@@ -24,6 +24,7 @@ import ph.coreproc.android.uhac3.ui.BaseActivity;
 import ph.coreproc.android.uhac3.ui.account_list.AccountListFragment;
 import ph.coreproc.android.uhac3.ui.adapters.ViewPagerAdapter;
 import ph.coreproc.android.uhac3.ui.profile.ProfileActivity;
+import ph.coreproc.android.uhac3.ui.transaction_list.TransactionListFragment;
 
 /**
  * Created by johneris on 09/10/2016.
@@ -160,8 +161,8 @@ public class HomeActivity extends BaseActivity implements HomeView {
         mViewPagerAdapter = new ViewPagerAdapter(getSupportFragmentManager());
         mViewPagerAdapter.addFragment(AccountListFragment.newInstance(),
                 getString(R.string.fragment_account_list_title));
-        mViewPagerAdapter.addFragment(AccountListFragment.newInstance(),
-                getString(R.string.fragment_account_list_title));
+        mViewPagerAdapter.addFragment(TransactionListFragment.newInstance(),
+                getString(R.string.fragment_transaction_list_title));
         viewPager.setAdapter(mViewPagerAdapter);
     }
 

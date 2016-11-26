@@ -6,6 +6,10 @@ import dagger.Module;
 import dagger.Provides;
 import ph.coreproc.android.uhac3.domain.interactors.account.GetAccountListInteractor;
 import ph.coreproc.android.uhac3.domain.interactors.account.GetAccountListInteractorImpl;
+import ph.coreproc.android.uhac3.domain.interactors.transaction.GetTransactionListInteractor;
+import ph.coreproc.android.uhac3.domain.interactors.transaction.GetTransactionListInteractorImpl;
+import ph.coreproc.android.uhac3.domain.interactors.transaction.GetTransactionListOfAccountInteractor;
+import ph.coreproc.android.uhac3.domain.interactors.transaction.GetTransactionListOfAccountInteractorImpl;
 import ph.coreproc.android.uhac3.domain.interactors.user.GetLoggedInUserInteractor;
 import ph.coreproc.android.uhac3.domain.interactors.user.GetLoggedInUserInteractorImpl;
 import ph.coreproc.android.uhac3.domain.interactors.user.GetUserInteractor;
@@ -100,5 +104,19 @@ public class InteractorModule {
     }
 
     // MARK: - End Account
+
+    // MARK: - Transaction
+
+    @Provides
+    GetTransactionListInteractor provideGetTransactionListInteractor(GetTransactionListInteractorImpl getTransactionListInteractor) {
+        return getTransactionListInteractor;
+    }
+
+    @Provides
+    GetTransactionListOfAccountInteractor provideGetTransactionListOfAccountInteractor(GetTransactionListOfAccountInteractorImpl getTransactionListOfAccountInteractor) {
+        return getTransactionListOfAccountInteractor;
+    }
+
+    // MARK: - End Transaction
 
 }

@@ -10,9 +10,11 @@ import javax.inject.Singleton;
 import dagger.Module;
 import dagger.Provides;
 import ph.coreproc.android.uhac3.data.repositories.AccountDataRepository;
+import ph.coreproc.android.uhac3.data.repositories.TransactionDataRepository;
 import ph.coreproc.android.uhac3.data.repositories.UserDataRepository;
 import ph.coreproc.android.uhac3.data.repositories.UtilDataRepository;
 import ph.coreproc.android.uhac3.domain.repositories.AccountRepository;
+import ph.coreproc.android.uhac3.domain.repositories.TransactionRepository;
 import ph.coreproc.android.uhac3.domain.repositories.UserRepository;
 import ph.coreproc.android.uhac3.domain.repositories.UtilRepository;
 
@@ -45,6 +47,12 @@ public class RepositoryModule {
     @Singleton
     AccountRepository provideAccountRepository(AccountDataRepository accountDataRepository) {
         return accountDataRepository;
+    }
+
+    @Provides
+    @Singleton
+    TransactionRepository provideTransactionRepository(TransactionDataRepository transactionDataRepository) {
+        return transactionDataRepository;
     }
 
 }

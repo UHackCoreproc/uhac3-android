@@ -20,6 +20,7 @@ import ph.coreproc.android.uhac3.ui.login.LoginActivity;
 import ph.coreproc.android.uhac3.ui.main.MainActivity;
 import ph.coreproc.android.uhac3.ui.profile.ProfileActivity;
 import ph.coreproc.android.uhac3.ui.register.RegisterActivity;
+import ph.coreproc.android.uhac3.ui.transaction_list.TransactionListFragment;
 import ph.coreproc.android.uhac3.ui.verify_mobile_number.VerifyMobileNumberActivity;
 
 /**
@@ -46,6 +47,8 @@ public interface ApplicationComponent {
     void inject(HomeActivity homeActivity);
 
     void inject(AccountListFragment accountListFragment);
+
+    void inject(TransactionListFragment transactionListFragment);
 
     void inject(ProfileActivity profileActivity);
 

@@ -21,7 +21,7 @@ import ph.coreproc.android.uhac3.domain.models.Account;
 public class AccountAdapter extends RecyclerView.Adapter<AccountAdapter.AccountViewHolder> {
 
     public interface Callback {
-        void onAccountClicked(Account delivery);
+        void onAccountClicked(Account account);
     }
 
     private List<Account> mAccountList;
@@ -42,8 +42,8 @@ public class AccountAdapter extends RecyclerView.Adapter<AccountAdapter.AccountV
                 new AccountViewHolder.Callback() {
                     @Override
                     public void onAccountClicked(int position) {
-                        Account delivery = mAccountList.get(position);
-                        mCallback.onAccountClicked(delivery);
+                        Account account = mAccountList.get(position);
+                        mCallback.onAccountClicked(account);
                     }
                 });
         mContext = parent.getContext();
@@ -61,8 +61,8 @@ public class AccountAdapter extends RecyclerView.Adapter<AccountAdapter.AccountV
         return mAccountList.size();
     }
 
-    public void changeData(List<Account> deliveryList) {
-        mAccountList = deliveryList;
+    public void changeData(List<Account> accountList) {
+        mAccountList = accountList;
         notifyDataSetChanged();
     }
 

@@ -67,6 +67,11 @@
     <string name="account_list_label_no_account">No Accounts to display</string>
     <!-- End Account List -->
 
+    <!-- Transaction List -->
+    <string name="fragment_transaction_list_title">Transactions</string>
+    <string name="transaction_list_label_no_transaction">No Transactions to display</string>
+    <!-- End Transaction List -->
+
     <!-- Profile -->
     <string name="activity_title_profile">My Profile</string>
     <!-- End Profile -->

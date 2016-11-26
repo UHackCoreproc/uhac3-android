@@ -14,6 +14,8 @@ import ph.coreproc.android.uhac3.ui.profile.ProfilePresenter;
 import ph.coreproc.android.uhac3.ui.profile.ProfilePresenterImpl;
 import ph.coreproc.android.uhac3.ui.register.RegisterPresenter;
 import ph.coreproc.android.uhac3.ui.register.RegisterPresenterImpl;
+import ph.coreproc.android.uhac3.ui.transaction_list.TransactionListPresenter;
+import ph.coreproc.android.uhac3.ui.transaction_list.TransactionListPresenterImpl;
 import ph.coreproc.android.uhac3.ui.verify_mobile_number.VerifyMobileNumberPresenter;
 import ph.coreproc.android.uhac3.ui.verify_mobile_number.VerifyMobileNumberPresenterImpl;
 
@@ -56,6 +58,11 @@ public class PresenterModule {
     @Provides
     AccountListPresenter provideAccountListPresenter(AccountListPresenterImpl accountListPresenter) {
         return accountListPresenter;
+    }
+
+    @Provides
+    TransactionListPresenter provideTransactionListPresenter(TransactionListPresenterImpl transactionListPresenter) {
+        return transactionListPresenter;
     }
 
 }
