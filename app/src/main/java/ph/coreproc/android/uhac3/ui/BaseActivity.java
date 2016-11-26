@@ -10,6 +10,7 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.TextView;
 
 import com.google.gson.Gson;
@@ -19,13 +20,13 @@ import javax.inject.Inject;
 
 import butterknife.ButterKnife;
 import ph.coreproc.android.uhac3.App;
+import ph.coreproc.android.uhac3.R;
 import ph.coreproc.android.uhac3.data.exceptions.ApiHttpErrorBundle;
 import ph.coreproc.android.uhac3.dependency_injection.components.ApplicationComponent;
 import ph.coreproc.android.uhac3.domain.errors.ErrorBundle;
 import ph.coreproc.android.uhac3.domain.interactors.user.LogoutInteractor;
 import ph.coreproc.android.uhac3.errors.UserNotLoggedInError;
 import ph.coreproc.android.uhac3.ui.main.MainActivity;
-import ph.coreproc.android.uhac3.R;
 
 /**
  * Created by johneris on 23/09/2016.
@@ -91,6 +92,13 @@ public abstract class BaseActivity extends AppCompatActivity {
     protected static Gson getGsonForBundle() {
         Gson gson = new GsonBuilder().create();
         return gson;
+    }
+
+    private void hideSoftKeyboard() {
+        if (getCurrentFocus() != null) {
+            InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
+            inputMethodManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
+        }
     }
 
     protected ApplicationComponent getApplicationComponent() {

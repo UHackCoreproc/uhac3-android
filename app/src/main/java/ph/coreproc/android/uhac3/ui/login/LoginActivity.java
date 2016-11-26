@@ -16,8 +16,8 @@ import ph.coreproc.android.uhac3.R;
 import ph.coreproc.android.uhac3.domain.errors.ErrorBundle;
 import ph.coreproc.android.uhac3.domain.models.params.LoginParams;
 import ph.coreproc.android.uhac3.ui.BaseActivity;
+import ph.coreproc.android.uhac3.ui.ask_mobile_number.AskMobileNumberActivity;
 import ph.coreproc.android.uhac3.ui.home.HomeActivity;
-import ph.coreproc.android.uhac3.ui.verify_mobile_number.VerifyMobileNumberActivity;
 
 /**
  * Created by johneris on 06/11/2016.
@@ -97,7 +97,7 @@ public class LoginActivity extends BaseActivity implements LoginView {
 
     @OnClick(R.id.registerButton)
     public void onRegisterClicked() {
-        Intent intent = VerifyMobileNumberActivity.newIntent(mContext, "09753966346");
+        Intent intent = AskMobileNumberActivity.newIntent(mContext);
         startActivity(intent);
     }
 

@@ -11,9 +11,6 @@ public class RegisterParams {
     @SerializedName("email")
     private String mEmail;
 
-    @SerializedName("account_no")
-    private String mAccountNo;
-
     @SerializedName("contact_no")
     private String mContactNo;
 
@@ -26,10 +23,9 @@ public class RegisterParams {
     @SerializedName("confirm_password")
     private String mConfirmPassword;
 
-    public RegisterParams(String email, String accountNo, String contactNo,
+    public RegisterParams(String email, String contactNo,
                           String veficationCode, String password, String confirmPassword) {
         mEmail = email;
-        mAccountNo = accountNo;
         mContactNo = contactNo;
         mVeficationCode = veficationCode;
         mPassword = password;
@@ -42,14 +38,6 @@ public class RegisterParams {
 
     public void setEmail(String email) {
         mEmail = email;
-    }
-
-    public String getAccountNo() {
-        return mAccountNo;
-    }
-
-    public void setAccountNo(String accountNo) {
-        mAccountNo = accountNo;
     }
 
     public String getContactNo() {

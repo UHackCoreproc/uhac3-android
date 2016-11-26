@@ -43,13 +43,20 @@
     <!-- End Login -->
 
     <!-- Verify Mobile Number -->
-    <string name="activity_verify_mobile_number_title">Verify Mobile Number</string>
+    <string name="activity_verify_mobile_number_title">Verification</string>
     <string name="verify_mobile_number_label_enter">Enter Verification Code</string>
     <string name="verify_mobile_number_label_did_not_get_code">Did not get the verification code?</string>
     <string name="verify_mobile_number_button_submit">Submit</string>
     <string name="verify_mobile_number_button_resend_code">Resend Verification Code</string>
     <string name="verify_mobile_number_progress">@string/global_dialog_message_please_wait</string>
     <!-- End Verify Mobile Number -->
+
+    <!-- Ask Mobile Number -->
+    <string name="activity_ask_mobile_number_title">Mobile Number</string>
+    <string name="ask_mobile_number_label_reason">We need your mobile number to link it to your account. So you would be able to send and receive funds.</string>
+    <string name="ask_mobile_number_hint_mobile_number">Mobile Number</string>
+    <string name="ask_mobile_number_button_proceed">Next</string>
+    <!-- End Ask Mobile Number -->
 
     <!-- Home -->
     <string name="activity_title_home">Home</string>

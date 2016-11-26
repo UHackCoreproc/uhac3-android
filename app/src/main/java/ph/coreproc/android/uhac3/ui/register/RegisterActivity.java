@@ -37,9 +37,6 @@ public class RegisterActivity extends BaseActivity implements RegisterView {
     @BindView(R.id.emailEditText)
     EditText mEmailEditText;
 
-    @BindView(R.id.accountNoEditText)
-    EditText mAccountNoEditText;
-
     @BindView(R.id.contactNoEditText)
     EditText mContactNoEditText;
 
@@ -102,17 +99,12 @@ public class RegisterActivity extends BaseActivity implements RegisterView {
     @OnClick(R.id.registerButton)
     public void onRegisterClicked() {
         String email = mEmailEditText.getText().toString();
-        String accountNo = mAccountNoEditText.getText().toString();
         String password = mPasswordEditText.getText().toString();
         String confirmPassword = mConfirmPasswordEditText.getText().toString();
 
         String errorMessages = "";
         if (email.isEmpty()) {
             errorMessages = "Email is required.";
-        }
-        if (accountNo.isEmpty()) {
-            errorMessages += (errorMessages.isEmpty() ? "" : "\n");
-            errorMessages += "Account Number is required.";
         }
         if (password.isEmpty()) {
             errorMessages += (errorMessages.isEmpty() ? "" : "\n");
@@ -128,7 +120,7 @@ public class RegisterActivity extends BaseActivity implements RegisterView {
             return;
         }
 
-        RegisterParams registerParams = new RegisterParams(email, accountNo,
+        RegisterParams registerParams = new RegisterParams(email,
                 mMobileNumber, mVerificationCode, password, confirmPassword);
         mRegisterPresenter.register(registerParams);
     }
