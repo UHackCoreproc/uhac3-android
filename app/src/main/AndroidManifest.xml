@@ -24,6 +24,8 @@
 
         <activity android:name=".ui.login.LoginActivity"/>
 
+        <activity android:name=".ui.register.RegisterActivity"/>
+
         <activity android:name=".ui.home.HomeActivity"/>
 
         <activity android:name=".ui.profile.ProfileActivity"/>

@@ -1,7 +1,6 @@
 package ph.coreproc.android.uhac3.domain.models.params;
 
 import com.google.gson.annotations.SerializedName;
-import com.sun.org.apache.xpath.internal.operations.String;
 
 /**
  * Created by johneris on 26/11/2016.

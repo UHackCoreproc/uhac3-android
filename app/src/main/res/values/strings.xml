@@ -26,6 +26,7 @@
     <string name="login_label_username">Username</string>
     <string name="login_label_password">Password</string>
     <string name="login_button_login">Login</string>
+    <string name="login_button_register">@string/register_button_register</string>
     <string name="login_progress">@string/global_dialog_message_please_wait</string>
     <!-- End Login -->
 
@@ -36,6 +37,7 @@
     <string name="register_label_contact_no">Contact Number</string>
     <string name="register_label_password">Password</string>
     <string name="register_label_confirm_password">Confirm Password</string>
+    <string name="register_label_no_account">Don\'t have an account yet?</string>
     <string name="register_button_register">Register</string>
     <string name="register_progress">@string/global_dialog_message_please_wait</string>
     <!-- End Login -->

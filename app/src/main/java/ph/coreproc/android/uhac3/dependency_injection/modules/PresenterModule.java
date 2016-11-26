@@ -10,6 +10,8 @@ import ph.coreproc.android.uhac3.ui.main.MainPresenter;
 import ph.coreproc.android.uhac3.ui.main.MainPresenterImpl;
 import ph.coreproc.android.uhac3.ui.profile.ProfilePresenter;
 import ph.coreproc.android.uhac3.ui.profile.ProfilePresenterImpl;
+import ph.coreproc.android.uhac3.ui.register.RegisterPresenter;
+import ph.coreproc.android.uhac3.ui.register.RegisterPresenterImpl;
 
 /**
  * Created by johneris on 23/09/2016.
@@ -35,6 +37,11 @@ public class PresenterModule {
     @Provides
     ProfilePresenter provideProfilePresenter(ProfilePresenterImpl profilePresenter) {
         return profilePresenter;
+    }
+
+    @Provides
+    RegisterPresenter provideRegisterPresenter(RegisterPresenterImpl registerPresenter) {
+        return registerPresenter;
     }
 
 }

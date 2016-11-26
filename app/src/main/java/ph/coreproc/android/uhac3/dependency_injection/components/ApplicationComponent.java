@@ -5,6 +5,10 @@ import android.app.Application;
 import javax.inject.Singleton;
 
 import dagger.Component;
+import ph.coreproc.android.uhac3.data.modules.DatabaseModule;
+import ph.coreproc.android.uhac3.data.modules.NetModule;
+import ph.coreproc.android.uhac3.data.modules.PreferencesModule;
+import ph.coreproc.android.uhac3.data.modules.RepositoryModule;
 import ph.coreproc.android.uhac3.dependency_injection.modules.ApplicationModule;
 import ph.coreproc.android.uhac3.dependency_injection.modules.PresenterModule;
 import ph.coreproc.android.uhac3.dependency_injection.modules.UtilModule;
@@ -14,10 +18,7 @@ import ph.coreproc.android.uhac3.ui.home.HomeActivity;
 import ph.coreproc.android.uhac3.ui.login.LoginActivity;
 import ph.coreproc.android.uhac3.ui.main.MainActivity;
 import ph.coreproc.android.uhac3.ui.profile.ProfileActivity;
-import ph.coreproc.android.uhac3.data.modules.DatabaseModule;
-import ph.coreproc.android.uhac3.data.modules.NetModule;
-import ph.coreproc.android.uhac3.data.modules.PreferencesModule;
-import ph.coreproc.android.uhac3.data.modules.RepositoryModule;
+import ph.coreproc.android.uhac3.ui.register.RegisterActivity;
 
 /**
  * Created by johneris on 23/09/2016.
@@ -35,6 +36,8 @@ public interface ApplicationComponent {
     void inject(MainActivity mainActivity);
 
     void inject(LoginActivity loginActivity);
+
+    void inject(RegisterActivity registerActivity);
 
     void inject(HomeActivity homeActivity);
 
