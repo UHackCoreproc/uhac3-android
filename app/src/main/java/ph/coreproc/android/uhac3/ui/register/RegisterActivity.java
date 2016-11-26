@@ -16,6 +16,7 @@ import ph.coreproc.android.uhac3.R;
 import ph.coreproc.android.uhac3.domain.errors.ErrorBundle;
 import ph.coreproc.android.uhac3.domain.models.params.RegisterParams;
 import ph.coreproc.android.uhac3.ui.BaseActivity;
+import ph.coreproc.android.uhac3.ui.main.MainActivity;
 
 /**
  * Created by johneris on 26/11/2016.
@@ -150,6 +151,9 @@ public class RegisterActivity extends BaseActivity implements RegisterView {
     @Override
     public void showRegisterSuccess() {
         dismissProgressDialog();
+        Intent intent = MainActivity.newIntent(mContext);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(intent);
     }
 
     @Override
