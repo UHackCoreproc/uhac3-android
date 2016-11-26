@@ -5,7 +5,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.NavigationView;
+import android.support.design.widget.TabLayout;
 import android.support.v4.view.GravityCompat;
+import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.view.Menu;
@@ -16,10 +18,12 @@ import android.widget.TextView;
 import javax.inject.Inject;
 
 import butterknife.BindView;
+import ph.coreproc.android.uhac3.R;
 import ph.coreproc.android.uhac3.domain.models.User;
 import ph.coreproc.android.uhac3.ui.BaseActivity;
+import ph.coreproc.android.uhac3.ui.account_list.AccountListFragment;
+import ph.coreproc.android.uhac3.ui.adapters.ViewPagerAdapter;
 import ph.coreproc.android.uhac3.ui.profile.ProfileActivity;
-import ph.coreproc.android.uhac3.R;
 
 /**
  * Created by johneris on 09/10/2016.
@@ -32,6 +36,12 @@ public class HomeActivity extends BaseActivity implements HomeView {
         return intent;
     }
 
+    @BindView(R.id.tabs)
+    TabLayout mTabs;
+
+    @BindView(R.id.viewpager)
+    ViewPager mViewpager;
+
     @BindView(R.id.navigationView)
     NavigationView mNavigationView;
 
@@ -40,6 +50,8 @@ public class HomeActivity extends BaseActivity implements HomeView {
 
     @Inject
     HomePresenter mHomePresenter;
+
+    private ViewPagerAdapter mViewPagerAdapter;
 
     @Override
     protected int getLayoutResourceId() {
@@ -64,8 +76,8 @@ public class HomeActivity extends BaseActivity implements HomeView {
 
     @Override
     protected void onDestroy() {
-        super.onDestroy();
         mHomePresenter.setHomeView(null);
+        super.onDestroy();
     }
 
     @Override
@@ -94,6 +106,8 @@ public class HomeActivity extends BaseActivity implements HomeView {
     private void initUI() {
         initToolbar();
         initNavigationView(mNavigationView);
+        initViewPager(mViewpager);
+        initTabs(mTabs, mViewpager);
     }
 
     private void initToolbar() {
@@ -140,6 +154,19 @@ public class HomeActivity extends BaseActivity implements HomeView {
         } else {
             logout();
         }
+    }
+
+    private void initViewPager(ViewPager viewPager) {
+        mViewPagerAdapter = new ViewPagerAdapter(getSupportFragmentManager());
+        mViewPagerAdapter.addFragment(AccountListFragment.newInstance(),
+                getString(R.string.fragment_account_list_title));
+        mViewPagerAdapter.addFragment(AccountListFragment.newInstance(),
+                getString(R.string.fragment_account_list_title));
+        viewPager.setAdapter(mViewPagerAdapter);
+    }
+
+    private void initTabs(TabLayout tabLayout, ViewPager viewpager) {
+        tabLayout.setupWithViewPager(viewpager);
     }
 
     private void goToProfile() {

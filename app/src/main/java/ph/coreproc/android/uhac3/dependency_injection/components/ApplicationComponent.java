@@ -14,6 +14,7 @@ import ph.coreproc.android.uhac3.dependency_injection.modules.PresenterModule;
 import ph.coreproc.android.uhac3.dependency_injection.modules.UtilModule;
 import ph.coreproc.android.uhac3.domain.modules.InteractorModule;
 import ph.coreproc.android.uhac3.ui.BaseActivity;
+import ph.coreproc.android.uhac3.ui.account_list.AccountListFragment;
 import ph.coreproc.android.uhac3.ui.home.HomeActivity;
 import ph.coreproc.android.uhac3.ui.login.LoginActivity;
 import ph.coreproc.android.uhac3.ui.main.MainActivity;
@@ -43,6 +44,8 @@ public interface ApplicationComponent {
     void inject(RegisterActivity registerActivity);
 
     void inject(HomeActivity homeActivity);
+
+    void inject(AccountListFragment accountListFragment);
 
     void inject(ProfileActivity profileActivity);
 

@@ -62,6 +62,11 @@
     <string name="activity_title_home">Home</string>
     <!-- End Home -->
 
+    <!-- Account List -->
+    <string name="fragment_account_list_title">Accounts</string>
+    <string name="account_list_label_no_account">No Accounts to display</string>
+    <!-- End Account List -->
+
     <!-- Profile -->
     <string name="activity_title_profile">My Profile</string>
     <!-- End Profile -->

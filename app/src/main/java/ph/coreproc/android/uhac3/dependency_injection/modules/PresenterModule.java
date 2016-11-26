@@ -2,6 +2,8 @@ package ph.coreproc.android.uhac3.dependency_injection.modules;
 
 import dagger.Module;
 import dagger.Provides;
+import ph.coreproc.android.uhac3.ui.account_list.AccountListPresenter;
+import ph.coreproc.android.uhac3.ui.account_list.AccountListPresenterImpl;
 import ph.coreproc.android.uhac3.ui.home.HomePresenter;
 import ph.coreproc.android.uhac3.ui.home.HomePresenterImpl;
 import ph.coreproc.android.uhac3.ui.login.LoginPresenter;
@@ -49,6 +51,11 @@ public class PresenterModule {
     @Provides
     VerifyMobileNumberPresenter provideVerifyMobileNumberPresenter(VerifyMobileNumberPresenterImpl verifyMobileNumberPresenter) {
         return verifyMobileNumberPresenter;
+    }
+
+    @Provides
+    AccountListPresenter provideAccountListPresenter(AccountListPresenterImpl accountListPresenter) {
+        return accountListPresenter;
     }
 
 }

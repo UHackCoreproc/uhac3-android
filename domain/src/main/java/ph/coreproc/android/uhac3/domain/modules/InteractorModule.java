@@ -4,6 +4,8 @@ import javax.inject.Named;
 
 import dagger.Module;
 import dagger.Provides;
+import ph.coreproc.android.uhac3.domain.interactors.account.GetAccountListInteractor;
+import ph.coreproc.android.uhac3.domain.interactors.account.GetAccountListInteractorImpl;
 import ph.coreproc.android.uhac3.domain.interactors.user.GetLoggedInUserInteractor;
 import ph.coreproc.android.uhac3.domain.interactors.user.GetLoggedInUserInteractorImpl;
 import ph.coreproc.android.uhac3.domain.interactors.user.GetUserInteractor;
@@ -89,5 +91,14 @@ public class InteractorModule {
     }
 
     // MARK: - End Util
+
+    // MARK: - Account
+
+    @Provides
+    GetAccountListInteractor provideGetAccountListInteractor(GetAccountListInteractorImpl getAccountListInteractor) {
+        return getAccountListInteractor;
+    }
+
+    // MARK: - End Account
 
 }
