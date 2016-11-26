@@ -20,6 +20,7 @@ import java.util.List;
 import javax.inject.Inject;
 
 import butterknife.BindView;
+import butterknife.OnClick;
 import ph.coreproc.android.uhac3.R;
 import ph.coreproc.android.uhac3.domain.errors.ErrorBundle;
 import ph.coreproc.android.uhac3.domain.models.Account;
@@ -142,6 +143,11 @@ public class TransactionListActivity extends BaseActivity implements Transaction
                 android.R.color.holo_green_light,
                 android.R.color.holo_orange_light,
                 android.R.color.holo_red_light);
+    }
+
+    @OnClick(R.id.fab)
+    public void onFabClicked() {
+
     }
 
     /**

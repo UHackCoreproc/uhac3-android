@@ -77,4 +77,8 @@
     <string name="activity_title_profile">My Profile</string>
     <!-- End Profile -->
 
+    <!-- Add Account -->
+    <string name="activity_title_add_account">Add Account</string>
+    <!-- End Add Account -->
+
 </resources>

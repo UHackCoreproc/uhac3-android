@@ -30,18 +30,18 @@ public class TransactionDataRepository implements TransactionRepository {
     @Override
     public Observable<List<Transaction>> getTransactionList() {
         List<Transaction> transactionList = new ArrayList<>();
-//        for (int i = 0; i < 6; i++) {
-//            transactionList.add(new Transaction());
-//        }
+        for (int i = 0; i < 6; i++) {
+            transactionList.add(new Transaction());
+        }
         return Observable.just(transactionList);
     }
 
     @Override
     public Observable<List<Transaction>> getTransactionList(Account account) {
         List<Transaction> transactionList = new ArrayList<>();
-//        for (int i = 0; i < 6; i++) {
-//            transactionList.add(new Transaction());
-//        }
+        for (int i = 0; i < 6; i++) {
+            transactionList.add(new Transaction());
+        }
         return Observable.just(transactionList);
     }
 }
