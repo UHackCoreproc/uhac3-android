@@ -34,12 +34,38 @@
         <activity android:name=".ui.ask_mobile_number.AskMobileNumberActivity"/>
 
         <activity android:name=".ui.verify_mobile_number.VerifyMobileNumberActivity"/>
-        
+
         <activity android:name=".ui.transaction_list.TransactionListActivity"/>
 
         <activity android:name=".ui.select_contact.SelectContactActivity"/>
 
         <activity android:name=".ui.amount_remarks.InputAmountAndRemarksActivity"/>
+
+        <!-- Firebase -->
+
+        <service
+            android:name=".services.Uhac3FirebaseMessagingService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+        </service>
+
+        <service
+            android:name=".services.Uhac3FirebaseInstanceIdService">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
+            </intent-filter>
+        </service>
+
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_icon"
+            android:resource="@mipmap/ic_launcher"/>
+
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_color"
+            android:resource="@color/primary"/>
+
+        <!-- End Firebase -->
 
     </application>
 

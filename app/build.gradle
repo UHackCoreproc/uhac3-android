@@ -71,9 +71,9 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt')
             proguardFiles(proGuardFileCollection)
         }
-        debug {
-            applicationIdSuffix ".debug"
-        }
+//        debug {
+//            applicationIdSuffix ".debug"
+//        }
     }
 }
 
@@ -107,6 +107,7 @@ dependencies {
     compile appDependencies.rxJava
     compile appDependencies.customActivityOnCrash
     compile appDependencies.glide
+    compile appDependencies.firebase
 
     compile appDependencies.rxJavaProguard
 
@@ -118,3 +119,5 @@ dependencies {
     // Development
     debugCompile appDevelopmentDependencies.leakCanary
 }
+
+apply plugin: 'com.google.gms.google-services'

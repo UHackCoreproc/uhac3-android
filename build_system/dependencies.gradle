@@ -33,6 +33,7 @@ ext {
     rxJavaVersion = '1.1.8'
     customActivityOnCrashVersion = '1.4.0'
     glideVersion = '3.6.1'
+    firebaseVersion = '10.0.0'
 
     // Proguard
     rxJavaProguardVersion = '1.1.6.0'
@@ -67,7 +68,8 @@ ext {
             rxJava               : "io.reactivex:rxjava:${rxJavaVersion}",
             rxJavaProguard       : "com.artemzin.rxjava:proguard-rules:${rxJavaProguardVersion}",
             customActivityOnCrash: "cat.ereza:customactivityoncrash:${customActivityOnCrashVersion}",
-            glide                : "com.github.bumptech.glide:glide:${glideVersion}"
+            glide                : "com.github.bumptech.glide:glide:${glideVersion}",
+            firebase             : "com.google.firebase:firebase-messaging:${firebaseVersion}"
     ]
 
     appTestDependencies = [
