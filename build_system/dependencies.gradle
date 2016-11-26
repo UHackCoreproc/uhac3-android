@@ -1,0 +1,122 @@
+allprojects {
+    repositories {
+        jcenter()
+    }
+}
+
+ext {
+    // Android
+    androidCompileSdkVersion = 24
+    androidBuildToolsVersion = "24.0.0"
+    androidMinSdkVersion = 16
+    androidTargetSdkVersion = 21
+
+    // Proguard
+    proguardDirectory = '../build_system/proguard-rules'
+
+    // Libraries
+    daggerVersion = '2.0.2'
+    appCompatVersion = '24.0.0'
+    supportVersion = '24.0.0'
+    supportDesignVersion = '24.0.0'
+    recyclerViewVersion = '24.0.0'
+    cardViewVersion = '24.0.0'
+    leakCanaryVersion = '1.3.1'
+    butterKnifeVersion = '8.1.0'
+    retrofitVersion = '2.1.0'
+    retrofitAdapterRxJavaVersion = '2.0.0'
+    okhttpLoggingInterceptorVersion = '3.3.1'
+    javaxAnnotationVersion = '1.0'
+    greenDaoVersion = '2.2.1'
+    greenDaoGeneratorVersion = '2.2.0'
+    rxAndroidVersion = '1.2.1'
+    rxJavaVersion = '1.1.8'
+    customActivityOnCrashVersion = '1.4.0'
+
+    // Proguard
+    rxJavaProguardVersion = '1.1.6.0'
+
+    // Testing
+    jUnitVersion = '4.12'
+    mockitoVersion = '1.9.5'
+    dexMakerVersion = '1.2'
+    dexMakerMockitoVersion = '1.2'
+    retrofitMockVersion = '2.0.0'
+    webServerMockVersion = '3.4.0'
+    supportTestRunnerVersion = '0.4'
+    supportTestRulesVersion = '0.4'
+    supportTestEspressoVersion = '2.2.1'
+
+    // Development
+    leakCanaryDebugVersion = '1.3.1'
+
+    appDependencies = [
+            daggerCompiler       : "com.google.dagger:dagger-compiler:${daggerVersion}",
+            dagger               : "com.google.dagger:dagger:${daggerVersion}",
+            appCompat            : "com.android.support:appcompat-v7:${appCompatVersion}",
+            support              : "com.android.support:support-v4:${supportVersion}",
+            supportDesign        : "com.android.support:design:${supportDesignVersion}",
+            recyclerView         : "com.android.support:recyclerview-v7:${recyclerViewVersion}",
+            cardView             : "com.android.support:cardview-v7:${cardViewVersion}",
+            leakCanary           : "com.squareup.leakcanary:leakcanary-android-no-op:${leakCanaryVersion}",
+            butterKnife          : "com.jakewharton:butterknife:${butterKnifeVersion}",
+            butterKnifeApt       : "com.jakewharton:butterknife-compiler:${butterKnifeVersion}",
+            javaxAnnotation      : "javax.annotation:jsr250-api:${javaxAnnotationVersion}",
+            rxAndroid            : "io.reactivex:rxandroid:${rxAndroidVersion}",
+            rxJava               : "io.reactivex:rxjava:${rxJavaVersion}",
+            rxJavaProguard       : "com.artemzin.rxjava:proguard-rules:${rxJavaProguardVersion}",
+            customActivityOnCrash: "cat.ereza:customactivityoncrash:${customActivityOnCrashVersion}"
+    ]
+
+    appTestDependencies = [
+            jUnit     : "junit:junit:${jUnitVersion}",
+            leakCanary: "com.squareup.leakcanary:leakcanary-android-no-op:${leakCanaryVersion}"
+    ]
+
+    appDevelopmentDependencies = [
+            leakCanary: "com.squareup.leakcanary:leakcanary-android:${leakCanaryDebugVersion}"
+    ]
+
+    domainDependencies = [
+            daggerCompiler       : "com.google.dagger:dagger-compiler:${daggerVersion}",
+            dagger               : "com.google.dagger:dagger:${daggerVersion}",
+            retrofitGsonConverter: "com.squareup.retrofit2:converter-gson:${retrofitVersion}",
+            javaxAnnotation      : "javax.annotation:jsr250-api:${javaxAnnotationVersion}",
+            rxJava               : "io.reactivex:rxjava:${rxJavaVersion}"
+    ]
+
+    domainTestDependencies = [
+            jUnit  : "junit:junit:${jUnitVersion}",
+            mockito: "org.mockito:mockito-core:${mockitoVersion}"
+    ]
+
+    dataDependencies = [
+            daggerCompiler          : "com.google.dagger:dagger-compiler:${daggerVersion}",
+            dagger                  : "com.google.dagger:dagger:${daggerVersion}",
+            retrofit                : "com.squareup.retrofit2:retrofit:${retrofitVersion}",
+            retrofitAdapterRxJava   : "com.squareup.retrofit2:adapter-rxjava:${retrofitAdapterRxJavaVersion}",
+            okhttpLoggingInterceptor: "com.squareup.okhttp3:logging-interceptor:${okhttpLoggingInterceptorVersion}",
+            retrofitGsonConverter   : "com.squareup.retrofit2:converter-gson:${retrofitVersion}",
+            javaxAnnotation         : "javax.annotation:jsr250-api:${javaxAnnotationVersion}",
+            greenDao                : "org.greenrobot:greendao:${greenDaoVersion}",
+            rxJava                  : "io.reactivex:rxjava:${rxJavaVersion}"
+    ]
+
+    dataTestDependencies = [
+            jUnit              : "junit:junit:${jUnitVersion}",
+            mockito            : "org.mockito:mockito-core:${mockitoVersion}",
+            dexMaker           : "com.google.dexmaker:dexmaker:${dexMakerVersion}",
+            dexMakerMockito    : "com.google.dexmaker:dexmaker-mockito:${dexMakerMockitoVersion}",
+            supportTestRunner  : "com.android.support.test:runner:${supportTestRunnerVersion}",
+            supportTestRules   : "com.android.support.test:rules:${supportTestRulesVersion}",
+            supportTestEspresso: "com.android.support.test.espresso:espresso-core:${supportTestEspressoVersion}",
+            retrofitMock       : "com.squareup.retrofit2:retrofit-mock:${retrofitMockVersion}",
+            webServerMock      : "com.squareup.okhttp3:mockwebserver:${webServerMockVersion}"
+    ]
+
+    databaseGeneratorDependencies = [
+            greenDaoGenerator: "org.greenrobot:greendao-generator:${greenDaoGeneratorVersion}",
+            greenDao         : "org.greenrobot:greendao:${greenDaoVersion}"
+    ]
+
+}

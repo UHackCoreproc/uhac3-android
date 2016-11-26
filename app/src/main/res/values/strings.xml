@@ -1,0 +1,40 @@
+<resources>
+    <string name="app_name">Kitchen Clean</string>
+
+    <!-- Global -->
+    <string name="global_dialog_action_ok">OK</string>
+    <string name="global_dialog_action_yes">YES</string>
+    <string name="global_dialog_action_proceed">PROCEED</string>
+    <string name="global_dialog_action_no">NO</string>
+    <string name="global_dialog_action_cancel">BACK</string>
+    <string name="global_dialog_action_delete">DELETE</string>
+    <string name="global_dialog_action_return">RETURN</string>
+    <string name="global_dialog_action_retry">RETRY</string>
+
+    <string name="global_dialog_title_error">Error</string>
+    <string name="global_dialog_title_success">Success</string>
+
+    <string name="global_dialog_message_please_wait">Please wait...</string>
+
+    <string name="global_toast_cancelled">Cancelled</string>
+
+    <string name="global_action_logout">Logout</string>
+    <!-- End Global -->
+
+    <!-- Login -->
+    <string name="activity_login_title">Login</string>
+    <string name="login_label_username">Username</string>
+    <string name="login_label_password">Password</string>
+    <string name="login_button_login">Login</string>
+    <string name="login_progress">@string/global_dialog_message_please_wait</string>
+    <!-- End Login -->
+
+    <!-- Home -->
+    <string name="activity_title_home">Home</string>
+    <!-- End Home -->
+
+    <!-- Profile -->
+    <string name="activity_title_profile">My Profile</string>
+    <!-- End Profile -->
+
+</resources>

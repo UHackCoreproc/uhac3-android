@@ -1,0 +1,119 @@
+apply plugin: 'com.android.application'
+apply plugin: 'android-apt'
+apply plugin: 'com.neenbedankt.android-apt'
+
+// Version Info
+def versionMajor = 0        // backward compatibility
+def versionMinor = 0        // new feature or a major behavior change
+def versionPatch = 0        // fixes, patch
+def versionInternal = 0     // internal release for testing
+def versionSuffix = ""      // version suffix
+
+def version = ""
+
+// internal release
+if (versionInternal != 0) {
+    version = "${versionMajor}.${versionMinor}.${versionPatch}.${versionInternal}"
+    if (versionSuffix != "") {
+        version += "-" + versionSuffix
+    }
+}
+
+// release
+else {
+    if (versionPatch != 0) {
+        version = "${versionMajor}.${versionMinor}.${versionPatch}"
+    } else {
+        version = "${versionMajor}.${versionMinor}"
+    }
+    if (versionSuffix != "") {
+        version += "-" + versionSuffix
+    }
+}
+
+
+def buildNumber = 0     // change this for same versionName but different versionCode
+
+android {
+    def globalConfiguration = rootProject.extensions.getByName("ext")
+    FileCollection proGuardFileCollection = files {
+        file(rootProject.ext.proguardDirectory).listFiles()
+    }
+
+    compileSdkVersion globalConfiguration.getAt("androidCompileSdkVersion")
+    buildToolsVersion globalConfiguration.getAt("androidBuildToolsVersion")
+
+    defaultConfig {
+        // minimum supported version
+        minSdkVersion globalConfiguration.getAt("androidMinSdkVersion")
+
+        // maximum sdk version the app is tested against
+        targetSdkVersion globalConfiguration.getAt("androidTargetSdkVersion")
+
+        applicationId 'ph.coreproc.android.appname'
+        versionCode versionMajor * 10000 + versionMinor * 1000 + versionPatch * 100 + buildNumber
+        versionName version
+    }
+
+    signingConfigs {
+        release {
+            storeFile file('../build_system/appname.jks')
+            storePassword 'hello123'
+            keyAlias 'appname'
+            keyPassword 'hello123'
+        }
+    }
+
+    buildTypes {
+        release {
+            signingConfig signingConfigs.release
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt')
+            proguardFiles(proGuardFileCollection)
+        }
+        debug {
+            applicationIdSuffix ".debug"
+        }
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    def appDependencies = rootProject.ext.appDependencies
+    def appTestDependencies = rootProject.ext.appTestDependencies
+    def appDevelopmentDependencies = rootProject.ext.appDevelopmentDependencies
+
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+
+    compile project(':data')
+    compile project(':domain')
+
+    apt appDependencies.daggerCompiler
+    apt appDependencies.butterKnifeApt
+
+    provided appDependencies.javaxAnnotation
+
+    compile appDependencies.dagger
+    compile appDependencies.appCompat
+    compile appDependencies.support
+    compile appDependencies.supportDesign
+    compile appDependencies.recyclerView
+    compile appDependencies.cardView
+    compile appDependencies.butterKnife
+    compile appDependencies.rxAndroid
+    compile appDependencies.rxJava
+    compile appDependencies.customActivityOnCrash
+
+    compile appDependencies.rxJavaProguard
+
+    releaseCompile appDependencies.leakCanary
+
+    testCompile appTestDependencies.jUnit
+    testCompile appTestDependencies.leakCanary
+
+    // Development
+    debugCompile appDevelopmentDependencies.leakCanary
+}

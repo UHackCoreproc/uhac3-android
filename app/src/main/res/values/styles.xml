@@ -1,0 +1,68 @@
+<resources>
+
+    <!-- Button -->
+
+    <style name="Button.Primary" parent="android:Widget.Button">
+        <item name="android:background">@drawable/button_primary</item>
+        <item name="android:textColor">@color/button_primary_text</item>
+        <item name="android:paddingLeft">@dimen/spacing_xlarge</item>
+        <item name="android:paddingRight">@dimen/spacing_xlarge</item>
+    </style>
+
+    <style name="Button.Danger" parent="Button.Primary">
+        <item name="android:background">@drawable/button_danger</item>
+        <item name="android:textColor">@color/button_danger_text</item>
+    </style>
+
+    <!-- End Button -->
+
+
+    <!-- EditText -->
+
+    <style name="EditText.Primary" parent="android:Widget.EditText">
+        <item name="android:padding">@dimen/spacing_small</item>
+        <item name="android:background">@drawable/edittext_primary</item>
+        <item name="android:textColorHint">@color/edittext_primary_hint</item>
+        <item name="android:maxLines">1</item>
+    </style>
+
+    <!-- End EditText -->
+
+
+    <!-- TextView -->
+
+    <style name="TextView.ToolbarTitle" parent="android:Widget.TextView">
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:textSize">20dp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:fontFamily">sans-serif-condensed</item>
+    </style>
+
+    <style name="TextView.H1" parent="android:Widget.TextView">
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="TextView.H2" parent="android:Widget.TextView">
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="TextView.Body" parent="android:Widget.TextView">
+        <item name="android:textColor">@color/text_secondary</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="TextView.Small" parent="android:Widget.TextView">
+        <item name="android:textColor">@color/text_secondary</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="TextView.InputLabel" parent="android:Widget.TextView">
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <!-- End TextView -->
+
+</resources>
