@@ -18,6 +18,8 @@ import ph.coreproc.android.uhac3.ui.select_contact.SelectContactPresenter;
 import ph.coreproc.android.uhac3.ui.select_contact.SelectContactPresenterImpl;
 import ph.coreproc.android.uhac3.ui.transaction_list.TransactionListPresenter;
 import ph.coreproc.android.uhac3.ui.transaction_list.TransactionListPresenterImpl;
+import ph.coreproc.android.uhac3.ui.transfer.TransferPresenter;
+import ph.coreproc.android.uhac3.ui.transfer.TransferPresenterImpl;
 import ph.coreproc.android.uhac3.ui.verify_mobile_number.VerifyMobileNumberPresenter;
 import ph.coreproc.android.uhac3.ui.verify_mobile_number.VerifyMobileNumberPresenterImpl;
 
@@ -70,6 +72,11 @@ public class PresenterModule {
     @Provides
     SelectContactPresenter provideSelectContactPresenter(SelectContactPresenterImpl selectContactPresenter) {
         return selectContactPresenter;
+    }
+
+    @Provides
+    TransferPresenter providesTransferPresenter(TransferPresenterImpl transferPresenter) {
+        return transferPresenter;
     }
 
 }

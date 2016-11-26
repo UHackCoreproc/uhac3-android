@@ -12,6 +12,7 @@ import butterknife.OnClick;
 import ph.coreproc.android.uhac3.R;
 import ph.coreproc.android.uhac3.domain.models.Account;
 import ph.coreproc.android.uhac3.ui.BaseActivity;
+import ph.coreproc.android.uhac3.ui.transfer.TransferActivity;
 import ph.coreproc.android.uhac3.ui.util.NumberTextWatcher;
 
 /**
@@ -121,7 +122,9 @@ public class InputAmountAndRemarksActivity extends BaseActivity {
             return;
         }
 
-
+        Intent intent = TransferActivity.newIntent(mContext, mSourceAccount,
+                mRecipientAccount, mMobileNumber, amount, remarks);
+        startActivity(intent);
     }
 
 }

@@ -9,6 +9,7 @@ import ph.coreproc.android.uhac3.data.net.ApiErrorUtil;
 import ph.coreproc.android.uhac3.data.net.ApiService;
 import ph.coreproc.android.uhac3.domain.models.Account;
 import ph.coreproc.android.uhac3.domain.models.Transaction;
+import ph.coreproc.android.uhac3.domain.models.params.TransferParams;
 import ph.coreproc.android.uhac3.domain.repositories.TransactionRepository;
 import rx.Observable;
 
@@ -25,6 +26,11 @@ public class TransactionDataRepository implements TransactionRepository {
     public TransactionDataRepository(ApiService apiService, ApiErrorUtil apiErrorUtil) {
         mApiService = apiService;
         mApiErrorUtil = apiErrorUtil;
+    }
+
+    @Override
+    public Observable<Transaction> tranfer(TransferParams transferParams) {
+        return Observable.just(new Transaction());
     }
 
     @Override

@@ -41,6 +41,8 @@
 
         <activity android:name=".ui.amount_remarks.InputAmountAndRemarksActivity"/>
 
+        <activity android:name=".ui.transfer.TransferActivity"/>
+
         <!-- Firebase -->
 
         <service

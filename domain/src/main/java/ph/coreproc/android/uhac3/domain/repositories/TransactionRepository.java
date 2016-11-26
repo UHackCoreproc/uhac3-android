@@ -4,6 +4,7 @@ import java.util.List;
 
 import ph.coreproc.android.uhac3.domain.models.Account;
 import ph.coreproc.android.uhac3.domain.models.Transaction;
+import ph.coreproc.android.uhac3.domain.models.params.TransferParams;
 import rx.Observable;
 
 /**
@@ -11,6 +12,14 @@ import rx.Observable;
  */
 
 public interface TransactionRepository {
+
+    /**
+     * Transfer.
+     *
+     * @param transferParams
+     * @return
+     */
+    Observable<Transaction> tranfer(TransferParams transferParams);
 
     /**
      * Get list of all {@link Transaction}.

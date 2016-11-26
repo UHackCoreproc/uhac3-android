@@ -10,6 +10,8 @@ import ph.coreproc.android.uhac3.domain.interactors.transaction.GetTransactionLi
 import ph.coreproc.android.uhac3.domain.interactors.transaction.GetTransactionListInteractorImpl;
 import ph.coreproc.android.uhac3.domain.interactors.transaction.GetTransactionListOfAccountInteractor;
 import ph.coreproc.android.uhac3.domain.interactors.transaction.GetTransactionListOfAccountInteractorImpl;
+import ph.coreproc.android.uhac3.domain.interactors.transaction.TransferInteractor;
+import ph.coreproc.android.uhac3.domain.interactors.transaction.TransferInteractorImpl;
 import ph.coreproc.android.uhac3.domain.interactors.user.GetLoggedInUserInteractor;
 import ph.coreproc.android.uhac3.domain.interactors.user.GetLoggedInUserInteractorImpl;
 import ph.coreproc.android.uhac3.domain.interactors.user.GetUserInteractor;
@@ -122,6 +124,11 @@ public class InteractorModule {
     @Provides
     GetTransactionListOfAccountInteractor provideGetTransactionListOfAccountInteractor(GetTransactionListOfAccountInteractorImpl getTransactionListOfAccountInteractor) {
         return getTransactionListOfAccountInteractor;
+    }
+
+    @Provides
+    TransferInteractor provideTransferInteractor(TransferInteractorImpl transferInteractor) {
+        return transferInteractor;
     }
 
     // MARK: - End Transaction

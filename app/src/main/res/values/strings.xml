@@ -86,6 +86,10 @@
     <string name="activity_amount_remarks_title">Amount</string>
     <!-- End Amount -->
 
+    <!-- Transfer -->
+    <string name="activity_transfer_title">Confirm Transfer</string>
+    <!-- End Transfer -->
+
     <!-- Add Account -->
     <string name="activity_title_add_account">Add Account</string>
     <!-- End Add Account -->

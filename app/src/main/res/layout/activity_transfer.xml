@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/include_toolbar"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/activity_padding">
+
+            <TextView
+                android:id="@+id/cardTitleTextView"
+                style="@style/TextView.H1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Discover Card"/>
+
+            <TextView
+                android:id="@+id/accountNoTextView"
+                style="@style/TextView.H2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="ACCT-NO"/>
+
+            <TextView
+                android:id="@+id/sourceAccountTypeTextView"
+                style="@style/TextView.Body"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Type"
+                android:textStyle="italic"/>
+
+            <TextView
+                style="@style/TextView.Body"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_medium"
+                android:gravity="center"
+                android:text="You are about to transfer"/>
+
+            <TextView
+                android:id="@+id/amountTextView"
+                style="@style/TextView.H1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_small"
+                android:gravity="center"
+                android:text="PHP 10,000"
+                android:textColor="@color/text_secondary"
+                android:textSize="40sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/recipientTextView"
+                style="@style/TextView.H2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_medium"
+                android:gravity="center"
+                android:text="TO: 09753966346"/>
+
+            <TextView
+                android:id="@+id/remarksTextView"
+                style="@style/TextView.H2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_medium"
+                android:text="Remarks: 09753966346"/>
+
+            <Button
+                android:id="@+id/submitButton"
+                style="@style/Button.Primary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_large"
+                android:text="Submit"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>
