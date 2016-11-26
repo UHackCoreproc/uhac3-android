@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <color name="primary">#6293BC</color>           <!-- color of toolbar -->
-    <color name="primary_dark">#4E7696</color>      <!-- color of status bar -->
+    <color name="primary">#EF6C00</color>           <!-- color of toolbar -->
+    <color name="primary_dark">#E65100</color>      <!-- color of status bar -->
     <color name="primary_light">#F5F9FD</color>
     <color name="accent">#009688</color>            <!-- tint of views -->
     <color name="text_primary">@color/primary</color>

@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="ph.coreproc.android.appname.data">
+          package="ph.coreproc.android.uhac3.data">
 
     <application android:allowBackup="true"
                  android:label="@string/app_name"

@@ -50,16 +50,16 @@ android {
         // maximum sdk version the app is tested against
         targetSdkVersion globalConfiguration.getAt("androidTargetSdkVersion")
 
-        applicationId 'ph.coreproc.android.appname'
+        applicationId 'ph.coreproc.android.uhack3'
         versionCode versionMajor * 10000 + versionMinor * 1000 + versionPatch * 100 + buildNumber
         versionName version
     }
 
     signingConfigs {
         release {
-            storeFile file('../build_system/appname.jks')
+            storeFile file('../build_system/uhack3.jks')
             storePassword 'hello123'
-            keyAlias 'appname'
+            keyAlias 'uhack3'
             keyPassword 'hello123'
         }
     }
