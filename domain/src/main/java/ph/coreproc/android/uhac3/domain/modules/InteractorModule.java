@@ -12,8 +12,12 @@ import ph.coreproc.android.uhac3.domain.interactors.user.LoginInteractor;
 import ph.coreproc.android.uhac3.domain.interactors.user.LoginInteractorImpl;
 import ph.coreproc.android.uhac3.domain.interactors.user.LogoutInteractor;
 import ph.coreproc.android.uhac3.domain.interactors.user.LogoutInteractorImpl;
+import ph.coreproc.android.uhac3.domain.interactors.user.RegisterInteractor;
+import ph.coreproc.android.uhac3.domain.interactors.user.RegisterInteractorImpl;
 import ph.coreproc.android.uhac3.domain.interactors.user.UpdateUserInteractor;
 import ph.coreproc.android.uhac3.domain.interactors.user.UpdateUserInteractorImpl;
+import ph.coreproc.android.uhac3.domain.interactors.util.VerifyMobileNumberInteractor;
+import ph.coreproc.android.uhac3.domain.interactors.util.VerifyMobileNumberInteractorImpl;
 import rx.Scheduler;
 
 /**
@@ -70,6 +74,20 @@ public class InteractorModule {
         return updateUserInteractor;
     }
 
+    @Provides
+    RegisterInteractor provideRegisterInteractor(RegisterInteractorImpl registerInteractor) {
+        return registerInteractor;
+    }
+
     // MARK: - End User
+
+    // MARK: - Util
+
+    @Provides
+    VerifyMobileNumberInteractor provideVerifyMobileNumberInteractor(VerifyMobileNumberInteractorImpl verifyMobileNumberInteractor) {
+        return verifyMobileNumberInteractor;
+    }
+
+    // MARK: - End Util
 
 }

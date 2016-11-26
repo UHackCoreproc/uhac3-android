@@ -10,6 +10,7 @@ import ph.coreproc.android.uhac3.data.net.ApiErrorUtil;
 import ph.coreproc.android.uhac3.data.net.ApiService;
 import ph.coreproc.android.uhac3.domain.models.User;
 import ph.coreproc.android.uhac3.domain.models.params.LoginParams;
+import ph.coreproc.android.uhac3.domain.models.params.RegisterParams;
 import ph.coreproc.android.uhac3.domain.repositories.UserRepository;
 import rx.Observable;
 
@@ -63,6 +64,11 @@ public class UserDataRepository implements UserRepository {
 
     @Override
     public Observable<User> login(LoginParams loginParams) {
+        return Observable.just(new User());
+    }
+
+    @Override
+    public Observable<User> register(RegisterParams registerParams) {
         return Observable.just(new User());
     }
 

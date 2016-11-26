@@ -29,6 +29,17 @@
     <string name="login_progress">@string/global_dialog_message_please_wait</string>
     <!-- End Login -->
 
+    <!-- Register -->
+    <string name="activity_register_title">Register</string>
+    <string name="register_label_email">Email</string>
+    <string name="register_label_account_no">Account Number</string>
+    <string name="register_label_contact_no">Contact Number</string>
+    <string name="register_label_password">Password</string>
+    <string name="register_label_confirm_password">Confirm Password</string>
+    <string name="register_button_register">Register</string>
+    <string name="register_progress">@string/global_dialog_message_please_wait</string>
+    <!-- End Login -->
+
     <!-- Home -->
     <string name="activity_title_home">Home</string>
     <!-- End Home -->

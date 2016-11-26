@@ -2,6 +2,7 @@ package ph.coreproc.android.uhac3.domain.repositories;
 
 import ph.coreproc.android.uhac3.domain.models.User;
 import ph.coreproc.android.uhac3.domain.models.params.LoginParams;
+import ph.coreproc.android.uhac3.domain.models.params.RegisterParams;
 import rx.Observable;
 
 /**
@@ -35,6 +36,15 @@ public interface UserRepository {
      * {@link Observable#error(Throwable)} on error
      */
     Observable<User> login(LoginParams loginParams);
+
+    /**
+     * Register.
+     *
+     * @param registerParams the details of the user that wants tor register.
+     * @return {@link Observable<User>} on success
+     * {@link Observable#error(Throwable)} on error
+     */
+    Observable<User> register(RegisterParams registerParams);
 
     /**
      * Get {@link User} details.
