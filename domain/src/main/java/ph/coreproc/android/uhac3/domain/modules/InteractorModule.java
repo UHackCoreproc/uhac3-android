@@ -22,6 +22,8 @@ import ph.coreproc.android.uhac3.domain.interactors.user.RegisterInteractor;
 import ph.coreproc.android.uhac3.domain.interactors.user.RegisterInteractorImpl;
 import ph.coreproc.android.uhac3.domain.interactors.user.UpdateUserInteractor;
 import ph.coreproc.android.uhac3.domain.interactors.user.UpdateUserInteractorImpl;
+import ph.coreproc.android.uhac3.domain.interactors.util.GetAccountListOfContactInteractor;
+import ph.coreproc.android.uhac3.domain.interactors.util.GetAccountListOfContactInteractorImpl;
 import ph.coreproc.android.uhac3.domain.interactors.util.VerifyMobileNumberInteractor;
 import ph.coreproc.android.uhac3.domain.interactors.util.VerifyMobileNumberInteractorImpl;
 import rx.Scheduler;
@@ -92,6 +94,11 @@ public class InteractorModule {
     @Provides
     VerifyMobileNumberInteractor provideVerifyMobileNumberInteractor(VerifyMobileNumberInteractorImpl verifyMobileNumberInteractor) {
         return verifyMobileNumberInteractor;
+    }
+
+    @Provides
+    GetAccountListOfContactInteractor provideGetAccountListOfContactInteractor(GetAccountListOfContactInteractorImpl getAccountListOfContactInteractor) {
+        return getAccountListOfContactInteractor;
     }
 
     // MARK: - End Util

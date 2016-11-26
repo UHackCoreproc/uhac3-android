@@ -28,6 +28,7 @@ import ph.coreproc.android.uhac3.domain.models.Transaction;
 import ph.coreproc.android.uhac3.ui.BaseActivity;
 import ph.coreproc.android.uhac3.ui.adapters.DividerItemDecoration;
 import ph.coreproc.android.uhac3.ui.adapters.TransactionAdapter;
+import ph.coreproc.android.uhac3.ui.select_contact.SelectContactActivity;
 
 /**
  * Created by johneris on 26/11/2016.
@@ -147,7 +148,8 @@ public class TransactionListActivity extends BaseActivity implements Transaction
 
     @OnClick(R.id.fab)
     public void onFabClicked() {
-
+        Intent intent = SelectContactActivity.newIntent(mContext);
+        startActivity(intent);
     }
 
     /**

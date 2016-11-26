@@ -8,7 +8,7 @@ import com.google.gson.annotations.SerializedName;
 
 public class MobileNumberVerification {
 
-    @SerializedName("mobile_no")
+    @SerializedName("mobile_number")
     private String mMobileNumber;
 
     @SerializedName("code")

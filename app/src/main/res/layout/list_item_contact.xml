@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/containerView"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?attr/selectableItemBackground"
+    android:clickable="true"
+    android:orientation="horizontal"
+    android:padding="@dimen/spacing_medium">
+
+    <ImageView
+        android:id="@+id/photoImageView"
+        android:layout_width="100px"
+        android:layout_height="100px"
+        android:layout_alignParentLeft="true"
+        android:scaleType="centerInside"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginLeft="@dimen/spacing_medium"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/nameTextView"
+            style="@style/TextView.H2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/text_secondary"
+            tools:text="Name"/>
+
+        <TextView
+            android:id="@+id/phoneNumberTextView"
+            style="@style/TextView.Body"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_xsmall"
+            tools:text="09052859483"/>
+
+    </LinearLayout>
+
+</LinearLayout>

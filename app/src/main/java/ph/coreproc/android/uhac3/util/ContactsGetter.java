@@ -53,7 +53,8 @@ public class ContactsGetter {
                             new String[]{id}, null);
                     while (pCur.moveToNext()) {
                         String phoneNo = pCur.getString(pCur.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER));
-                        Contact contact = new Contact(id, name, phoneNo);
+                        Uri photoUri = getPhotoUri(context, id);
+                        Contact contact = new Contact(id, name, phoneNo, photoUri);
                         contacts.add(contact);
                     }
                     pCur.close();

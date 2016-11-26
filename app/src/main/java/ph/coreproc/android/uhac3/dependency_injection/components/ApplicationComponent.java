@@ -20,6 +20,7 @@ import ph.coreproc.android.uhac3.ui.login.LoginActivity;
 import ph.coreproc.android.uhac3.ui.main.MainActivity;
 import ph.coreproc.android.uhac3.ui.profile.ProfileActivity;
 import ph.coreproc.android.uhac3.ui.register.RegisterActivity;
+import ph.coreproc.android.uhac3.ui.select_contact.SelectContactActivity;
 import ph.coreproc.android.uhac3.ui.transaction_list.TransactionListActivity;
 import ph.coreproc.android.uhac3.ui.transaction_list.TransactionListFragment;
 import ph.coreproc.android.uhac3.ui.verify_mobile_number.VerifyMobileNumberActivity;
@@ -54,6 +55,8 @@ public interface ApplicationComponent {
     void inject(TransactionListActivity transactionListActivity);
 
     void inject(ProfileActivity profileActivity);
+
+    void inject(SelectContactActivity selectContactActivity);
 
     /**
      * Exposed to sub-graphs

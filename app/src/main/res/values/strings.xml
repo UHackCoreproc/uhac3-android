@@ -77,6 +77,11 @@
     <string name="activity_title_profile">My Profile</string>
     <!-- End Profile -->
 
+    <!-- Select Contact -->
+    <string name="activity_select_contact_title">Select Contact</string>
+    <string name="select_contact_get_account_list_progress">@string/global_dialog_message_please_wait</string>
+    <!-- End Select Contact -->
+
     <!-- Add Account -->
     <string name="activity_title_add_account">Add Account</string>
     <!-- End Add Account -->

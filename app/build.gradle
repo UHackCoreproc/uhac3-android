@@ -106,6 +106,7 @@ dependencies {
     compile appDependencies.rxAndroid
     compile appDependencies.rxJava
     compile appDependencies.customActivityOnCrash
+    compile appDependencies.glide
 
     compile appDependencies.rxJavaProguard
 

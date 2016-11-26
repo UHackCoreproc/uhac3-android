@@ -3,6 +3,7 @@
           package="ph.coreproc.android.uhac3">
 
     <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.READ_CONTACTS"/>
 
     <uses-feature android:name="android.hardware.location.gps"/>
 
@@ -35,6 +36,8 @@
         <activity android:name=".ui.verify_mobile_number.VerifyMobileNumberActivity"/>
         
         <activity android:name=".ui.transaction_list.TransactionListActivity"/>
+
+        <activity android:name=".ui.select_contact.SelectContactActivity"/>
 
     </application>
 
