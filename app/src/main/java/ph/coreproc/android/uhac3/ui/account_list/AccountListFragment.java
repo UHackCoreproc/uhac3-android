@@ -1,6 +1,7 @@
 package ph.coreproc.android.uhac3.ui.account_list;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.widget.SwipeRefreshLayout;
@@ -29,6 +30,7 @@ import ph.coreproc.android.uhac3.domain.models.Account;
 import ph.coreproc.android.uhac3.ui.BaseActivity;
 import ph.coreproc.android.uhac3.ui.adapters.AccountAdapter;
 import ph.coreproc.android.uhac3.ui.adapters.DividerItemDecoration;
+import ph.coreproc.android.uhac3.ui.transaction_list.TransactionListActivity;
 
 /**
  * Created by johneris on 26/11/2016.
@@ -174,6 +176,7 @@ public class AccountListFragment extends Fragment implements AccountListView, Ac
 
     @Override
     public void onAccountClicked(Account account) {
-        Toast.makeText(mContext, "Account Selected", Toast.LENGTH_SHORT).show();
+        Intent intent = TransactionListActivity.newIntent(mContext, account);
+        startActivity(intent);
     }
 }

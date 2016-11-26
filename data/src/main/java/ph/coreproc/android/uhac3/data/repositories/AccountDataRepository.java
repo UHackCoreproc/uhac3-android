@@ -29,9 +29,9 @@ public class AccountDataRepository implements AccountRepository {
     @Override
     public Observable<List<Account>> getAccountList() {
         List<Account> accountList = new ArrayList<>();
-//        for (int i = 0; i < 3; i++) {
-//            accountList.add(new Account());
-//        }
+        for (int i = 0; i < 3; i++) {
+            accountList.add(new Account());
+        }
         return Observable.just(accountList);
     }
 

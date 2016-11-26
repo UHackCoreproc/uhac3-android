@@ -33,6 +33,8 @@
         <activity android:name=".ui.ask_mobile_number.AskMobileNumberActivity"/>
 
         <activity android:name=".ui.verify_mobile_number.VerifyMobileNumberActivity"/>
+        
+        <activity android:name=".ui.transaction_list.TransactionListActivity"/>
 
     </application>
 

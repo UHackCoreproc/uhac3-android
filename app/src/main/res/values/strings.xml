@@ -68,7 +68,8 @@
     <!-- End Account List -->
 
     <!-- Transaction List -->
-    <string name="fragment_transaction_list_title">Transactions</string>
+    <string name="fragment_transaction_list_title">History</string>
+    <string name="activity_transaction_list_title">@string/fragment_transaction_list_title</string>
     <string name="transaction_list_label_no_transaction">No Transactions to display</string>
     <!-- End Transaction List -->
 
