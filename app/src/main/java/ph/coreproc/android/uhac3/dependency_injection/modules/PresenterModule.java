@@ -12,6 +12,8 @@ import ph.coreproc.android.uhac3.ui.profile.ProfilePresenter;
 import ph.coreproc.android.uhac3.ui.profile.ProfilePresenterImpl;
 import ph.coreproc.android.uhac3.ui.register.RegisterPresenter;
 import ph.coreproc.android.uhac3.ui.register.RegisterPresenterImpl;
+import ph.coreproc.android.uhac3.ui.verify_mobile_number.VerifyMobileNumberPresenter;
+import ph.coreproc.android.uhac3.ui.verify_mobile_number.VerifyMobileNumberPresenterImpl;
 
 /**
  * Created by johneris on 23/09/2016.
@@ -42,6 +44,11 @@ public class PresenterModule {
     @Provides
     RegisterPresenter provideRegisterPresenter(RegisterPresenterImpl registerPresenter) {
         return registerPresenter;
+    }
+
+    @Provides
+    VerifyMobileNumberPresenter provideVerifyMobileNumberPresenter(VerifyMobileNumberPresenterImpl verifyMobileNumberPresenter) {
+        return verifyMobileNumberPresenter;
     }
 
 }

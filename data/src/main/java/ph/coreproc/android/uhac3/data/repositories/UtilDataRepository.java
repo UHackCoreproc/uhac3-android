@@ -28,7 +28,7 @@ public class UtilDataRepository implements UtilRepository {
     public Observable<MobileNumberVerification> verifyMobileNumber(VerifyMobileNumberParams verifyMobileNumberParams) {
         MobileNumberVerification mobileNumberVerification = new MobileNumberVerification();
         mobileNumberVerification.setMobileNumber("09753966346");
-        mobileNumberVerification.setVerificationCode("12345");
+        mobileNumberVerification.setVerificationCode("1234");
         return Observable.just(mobileNumberVerification);
     }
 

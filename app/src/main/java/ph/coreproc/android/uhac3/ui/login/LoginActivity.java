@@ -17,7 +17,7 @@ import ph.coreproc.android.uhac3.domain.errors.ErrorBundle;
 import ph.coreproc.android.uhac3.domain.models.params.LoginParams;
 import ph.coreproc.android.uhac3.ui.BaseActivity;
 import ph.coreproc.android.uhac3.ui.home.HomeActivity;
-import ph.coreproc.android.uhac3.ui.register.RegisterActivity;
+import ph.coreproc.android.uhac3.ui.verify_mobile_number.VerifyMobileNumberActivity;
 
 /**
  * Created by johneris on 06/11/2016.
@@ -30,8 +30,8 @@ public class LoginActivity extends BaseActivity implements LoginView {
         return intent;
     }
 
-    @BindView(R.id.usernameEditText)
-    EditText mUsernameEditText;
+    @BindView(R.id.emailEditText)
+    EditText mEmailEditText;
 
     @BindView(R.id.passwordEditText)
     EditText mPasswordEditText;
@@ -74,12 +74,12 @@ public class LoginActivity extends BaseActivity implements LoginView {
 
     @OnClick(R.id.loginButton)
     public void onLoginClicked() {
-        String username = mUsernameEditText.getText().toString();
+        String email = mEmailEditText.getText().toString();
         String password = mPasswordEditText.getText().toString();
 
         String errorMessages = "";
-        if (username.isEmpty()) {
-            errorMessages = "Username is required.";
+        if (email.isEmpty()) {
+            errorMessages = "Email is required.";
         }
         if (password.isEmpty()) {
             errorMessages += (errorMessages.isEmpty() ? "" : "\n");
@@ -91,13 +91,13 @@ public class LoginActivity extends BaseActivity implements LoginView {
             return;
         }
 
-        LoginParams loginParams = new LoginParams(username, password);
+        LoginParams loginParams = new LoginParams(email, password);
         mLoginPresenter.login(loginParams);
     }
 
     @OnClick(R.id.registerButton)
     public void onRegisterClicked() {
-        Intent intent = RegisterActivity.newIntent(mContext);
+        Intent intent = VerifyMobileNumberActivity.newIntent(mContext, "09753966346");
         startActivity(intent);
     }
 

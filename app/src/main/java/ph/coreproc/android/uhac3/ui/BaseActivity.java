@@ -104,11 +104,12 @@ public abstract class BaseActivity extends AppCompatActivity {
     protected void initToolbar(String toolbarTitle, boolean setDisplayHomeAsUpEnabled) {
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
+            actionBar.setTitle(toolbarTitle);
             actionBar.setDisplayHomeAsUpEnabled(setDisplayHomeAsUpEnabled);
         }
-        if (mToolbarTitleTextView != null) {
-            mToolbarTitleTextView.setText(toolbarTitle);
-        }
+//        if (mToolbarTitleTextView != null) {
+//            mToolbarTitleTextView.setText(toolbarTitle);
+//        }
     }
 
 

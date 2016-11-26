@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
@@ -18,41 +19,31 @@
             android:padding="@dimen/activity_padding">
 
             <TextView
-                style="@style/TextView.InputLabel"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/login_label_email"/>
-
-            <EditText
-                android:id="@+id/emailEditText"
-                style="@style/EditText.Primary"
+                style="@style/TextView.H1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/spacing_small"/>
+                android:layout_marginTop="@dimen/spacing_large"
+                android:gravity="center"
+                android:text="Enter Verification Code"/>
 
-            <TextView
-                style="@style/TextView.InputLabel"
-                android:layout_width="wrap_content"
+            <EditText
+                android:id="@+id/verificationCodeEditText"
+                style="@style/EditText.Primary"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/spacing_medium"
-                android:text="@string/login_label_password"/>
-
-            <EditText
-                android:id="@+id/passwordEditText"
-                style="@style/EditText.Primary"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/spacing_small"
-                android:inputType="textPassword"/>
+                android:gravity="center"
+                android:maxLength="@integer/mobile_number_verification_code_length"
+                android:textSize="@dimen/text_size_xlarge"
+                tools:text="1234"/>
 
             <Button
-                android:id="@+id/loginButton"
+                android:id="@+id/submitButton"
                 style="@style/Button.Primary"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
                 android:layout_marginTop="@dimen/spacing_medium"
-                android:text="@string/login_button_login"/>
+                android:text="@string/verify_mobile_number_button_submit"/>
 
             <TextView
                 style="@style/TextView.H2"
@@ -60,17 +51,18 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/spacing_xlarge"
                 android:gravity="center"
-                android:text="@string/register_label_no_account"/>
+                android:text="@string/verify_mobile_number_label_did_not_get_code"/>
 
             <Button
-                android:id="@+id/registerButton"
+                android:id="@+id/resendVerificationCodeButton"
                 style="@style/Button.Primary"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
                 android:layout_marginTop="@dimen/spacing_small"
-                android:text="@string/login_button_register"/>
+                android:text="@string/verify_mobile_number_button_resend_code"/>
+
         </LinearLayout>
+
     </ScrollView>
 
 </LinearLayout>

@@ -9,8 +9,10 @@ import ph.coreproc.android.uhac3.domain.interactors.DefaultSubscriber;
 import ph.coreproc.android.uhac3.domain.models.User;
 import ph.coreproc.android.uhac3.domain.models.params.RegisterParams;
 import ph.coreproc.android.uhac3.domain.repositories.UserRepository;
+import rx.Observable;
 import rx.Scheduler;
 import rx.Subscription;
+import rx.functions.Func1;
 
 /**
  * Created by johneris on 26/11/2016.
@@ -41,6 +43,13 @@ public class RegisterInteractorImpl extends BaseInteractor
         mCallback = callback;
         mSubscription = mUserRepository.register(registerParams)
                 .compose(this.<User>applySchedulers())
+                .flatMap(new Func1<User, Observable<User>>() {
+                    @Override
+                    public Observable<User> call(User appuser) {
+                        mUserRepository.saveLoggedInUser(appuser);
+                        return Observable.just(appuser);
+                    }
+                })
                 .subscribe(new DefaultSubscriber<User>() {
                     @Override
                     public void onError(ErrorBundle errorBundle) {

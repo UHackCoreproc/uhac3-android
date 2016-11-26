@@ -30,6 +30,8 @@
 
         <activity android:name=".ui.profile.ProfileActivity"/>
 
+        <activity android:name=".ui.verify_mobile_number.VerifyMobileNumberActivity"/>
+
     </application>
 
 </manifest>

@@ -19,6 +19,7 @@ import ph.coreproc.android.uhac3.ui.login.LoginActivity;
 import ph.coreproc.android.uhac3.ui.main.MainActivity;
 import ph.coreproc.android.uhac3.ui.profile.ProfileActivity;
 import ph.coreproc.android.uhac3.ui.register.RegisterActivity;
+import ph.coreproc.android.uhac3.ui.verify_mobile_number.VerifyMobileNumberActivity;
 
 /**
  * Created by johneris on 23/09/2016.
@@ -36,6 +37,8 @@ public interface ApplicationComponent {
     void inject(MainActivity mainActivity);
 
     void inject(LoginActivity loginActivity);
+
+    void inject(VerifyMobileNumberActivity verifyMobileNumberActivity);
 
     void inject(RegisterActivity registerActivity);
 
