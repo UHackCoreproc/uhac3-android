@@ -38,7 +38,8 @@
                 style="@style/EditText.Primary"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/ask_mobile_number_hint_mobile_number"/>
+                android:hint="@string/ask_mobile_number_hint_mobile_number"
+                android:inputType="phone"/>
 
             <Button
                 android:id="@+id/proceedButton"

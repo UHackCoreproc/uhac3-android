@@ -1,6 +1,7 @@
 package ph.coreproc.android.uhac3.ui.transaction_list;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.widget.SwipeRefreshLayout;
@@ -29,6 +30,7 @@ import ph.coreproc.android.uhac3.domain.models.Transaction;
 import ph.coreproc.android.uhac3.ui.BaseActivity;
 import ph.coreproc.android.uhac3.ui.adapters.DividerItemDecoration;
 import ph.coreproc.android.uhac3.ui.adapters.TransactionAdapter;
+import ph.coreproc.android.uhac3.ui.transaction_details.TransactionDetailsActivity;
 
 /**
  * Created by johneris on 26/11/2016.
@@ -174,6 +176,7 @@ public class TransactionListFragment extends Fragment implements TransactionList
 
     @Override
     public void onTransactionClicked(Transaction transaction) {
-        Toast.makeText(mContext, "Transaction Selected", Toast.LENGTH_SHORT).show();
+        Intent intent = TransactionDetailsActivity.newIntent(mContext, transaction);
+        startActivity(intent);
     }
 }

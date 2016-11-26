@@ -29,6 +29,7 @@ import ph.coreproc.android.uhac3.ui.BaseActivity;
 import ph.coreproc.android.uhac3.ui.adapters.DividerItemDecoration;
 import ph.coreproc.android.uhac3.ui.adapters.TransactionAdapter;
 import ph.coreproc.android.uhac3.ui.select_contact.SelectContactActivity;
+import ph.coreproc.android.uhac3.ui.transaction_details.TransactionDetailsActivity;
 
 /**
  * Created by johneris on 26/11/2016.
@@ -206,6 +207,7 @@ public class TransactionListActivity extends BaseActivity implements Transaction
 
     @Override
     public void onTransactionClicked(Transaction transaction) {
-        Toast.makeText(mContext, "Transaction Selected", Toast.LENGTH_SHORT).show();
+        Intent intent = TransactionDetailsActivity.newIntent(mContext, transaction);
+        startActivity(intent);
     }
 }

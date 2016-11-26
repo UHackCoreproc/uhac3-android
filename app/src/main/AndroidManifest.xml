@@ -47,6 +47,8 @@
 
         <activity android:name=".ui.add_account.AddAccountActivity"/>
 
+        <activity android:name=".ui.transaction_details.TransactionDetailsActivity"/>
+
         <!-- Firebase -->
 
         <service

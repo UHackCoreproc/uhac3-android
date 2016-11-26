@@ -77,6 +77,10 @@
     <string name="activity_title_profile">My Profile</string>
     <!-- End Profile -->
 
+    <!-- Transaction Details -->
+    <string name="activity_transaction_details_title">Transaction Details</string>
+    <!-- End Transaction Details -->
+
     <!-- Select Contact -->
     <string name="activity_select_contact_title">Select Contact</string>
     <string name="select_contact_get_account_list_progress">@string/global_dialog_message_please_wait</string>
