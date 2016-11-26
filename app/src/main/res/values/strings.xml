@@ -92,6 +92,19 @@
 
     <!-- Add Account -->
     <string name="activity_title_add_account">Add Account</string>
+    <string name="add_account_label_title">Title</string>
+    <string name="add_account_label_description">Description</string>
+    <string name="add_account_label_account_no">Account Number</string>
+    <string name="add_account_label_account_type">Account Type</string>
+    <string name="add_account_button_add">Add</string>
     <!-- End Add Account -->
+
+    <!-- Redeem Coupon -->
+    <string name="activity_redeem_coupon_title">Redeem</string>
+    <string name="redeem_coupon_label_source_mobile">Source Mobile Number</string>
+    <string name="redeem_coupon_label_recipient_mobile">Recipient Mobile Number</string>
+    <string name="redeem_coupon_label_coupon_code">Coupon Code</string>
+    <string name="redeem_coupon_button_redeem">Redeem</string>
+    <!-- End Redeem Coupon -->
 
 </resources>

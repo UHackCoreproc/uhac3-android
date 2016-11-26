@@ -23,7 +23,9 @@ import ph.coreproc.android.uhac3.domain.models.User;
 import ph.coreproc.android.uhac3.ui.BaseActivity;
 import ph.coreproc.android.uhac3.ui.account_list.AccountListFragment;
 import ph.coreproc.android.uhac3.ui.adapters.ViewPagerAdapter;
+import ph.coreproc.android.uhac3.ui.add_account.AddAccountActivity;
 import ph.coreproc.android.uhac3.ui.profile.ProfileActivity;
+import ph.coreproc.android.uhac3.ui.redeem_coupon.RedeemCouponActivity;
 import ph.coreproc.android.uhac3.ui.transaction_list.TransactionListFragment;
 
 /**
@@ -106,7 +108,7 @@ public class HomeActivity extends BaseActivity implements HomeView {
                 mDrawerLayout.openDrawer(GravityCompat.START);
                 return true;
             case R.id.profileMenuItem:
-                goToProfile();
+                goToAddAccount();
                 return true;
         }
         return super.onOptionsItemSelected(item);
@@ -149,6 +151,9 @@ public class HomeActivity extends BaseActivity implements HomeView {
                             case R.id.profileMenuItem:
                                 goToProfile();
                                 break;
+                            case R.id.redeemCouponMenuItem:
+                                goToRedeemCoupon();
+                                break;
                             case R.id.logoutMenuItem:
                                 logout();
                                 break;
@@ -188,6 +193,16 @@ public class HomeActivity extends BaseActivity implements HomeView {
 
     private void goToProfile() {
         Intent intent = ProfileActivity.newIntent(mContext);
+        startActivity(intent);
+    }
+
+    private void goToRedeemCoupon() {
+        Intent intent = RedeemCouponActivity.newIntent(mContext);
+        startActivity(intent);
+    }
+
+    private void goToAddAccount() {
+        Intent intent = AddAccountActivity.newIntent(mContext);
         startActivity(intent);
     }
 

@@ -4,6 +4,7 @@ import java.util.List;
 
 import ph.coreproc.android.uhac3.domain.models.Account;
 import ph.coreproc.android.uhac3.domain.models.Transaction;
+import ph.coreproc.android.uhac3.domain.models.params.RedeemCouponParams;
 import ph.coreproc.android.uhac3.domain.models.params.TransferParams;
 import rx.Observable;
 
@@ -35,5 +36,13 @@ public interface TransactionRepository {
      * @return
      */
     Observable<List<Transaction>> getTransactionList(Account account);
+
+    /**
+     * Redeem Coupon.
+     *
+     * @param redeemCouponParams
+     * @return
+     */
+    Observable<Transaction> redeemCoupon(RedeemCouponParams redeemCouponParams);
 
 }

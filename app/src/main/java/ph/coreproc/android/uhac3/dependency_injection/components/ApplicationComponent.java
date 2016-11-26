@@ -15,10 +15,12 @@ import ph.coreproc.android.uhac3.dependency_injection.modules.UtilModule;
 import ph.coreproc.android.uhac3.domain.modules.InteractorModule;
 import ph.coreproc.android.uhac3.ui.BaseActivity;
 import ph.coreproc.android.uhac3.ui.account_list.AccountListFragment;
+import ph.coreproc.android.uhac3.ui.add_account.AddAccountActivity;
 import ph.coreproc.android.uhac3.ui.home.HomeActivity;
 import ph.coreproc.android.uhac3.ui.login.LoginActivity;
 import ph.coreproc.android.uhac3.ui.main.MainActivity;
 import ph.coreproc.android.uhac3.ui.profile.ProfileActivity;
+import ph.coreproc.android.uhac3.ui.redeem_coupon.RedeemCouponActivity;
 import ph.coreproc.android.uhac3.ui.register.RegisterActivity;
 import ph.coreproc.android.uhac3.ui.select_contact.SelectContactActivity;
 import ph.coreproc.android.uhac3.ui.transaction_list.TransactionListActivity;
@@ -60,6 +62,10 @@ public interface ApplicationComponent {
     void inject(SelectContactActivity selectContactActivity);
 
     void inject(TransferActivity transferActivity);
+
+    void inject(RedeemCouponActivity redeemCouponActivity);
+
+    void inject(AddAccountActivity addAccountActivity);
 
     /**
      * Exposed to sub-graphs

@@ -23,6 +23,18 @@ public class Account {
     @SerializedName("accountType")
     private AccountType mAccountType;
 
+    public Account() {
+    }
+
+    public Account(String title, String description,
+                   String accountNumber, AccountType accountType) {
+        mId = null;
+        mTitle = title;
+        mDescription = description;
+        mAccountNumber = accountNumber;
+        mAccountType = accountType;
+    }
+
     public Long getId() {
         return mId;
     }

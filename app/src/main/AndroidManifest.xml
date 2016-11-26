@@ -43,6 +43,10 @@
 
         <activity android:name=".ui.transfer.TransferActivity"/>
 
+        <activity android:name=".ui.redeem_coupon.RedeemCouponActivity"/>
+
+        <activity android:name=".ui.add_account.AddAccountActivity"/>
+
         <!-- Firebase -->
 
         <service

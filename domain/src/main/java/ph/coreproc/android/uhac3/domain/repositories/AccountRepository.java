@@ -13,10 +13,26 @@ import rx.Observable;
 public interface AccountRepository {
 
     /**
-     * Get list of {@link Account} of currently logged in {@link User}
+     * Get list of {@link Account} of currently logged in {@link User}.
      *
      * @return
      */
     Observable<List<Account>> getAccountList();
+
+    /**
+     * Add {@link Account} for currently logged in {@link User}.
+     *
+     * @param account
+     * @return
+     */
+    Observable<Account> addAccount(Account account);
+
+    /**
+     * Delete {@link Account} for currently logged in {@link User}.
+     *
+     * @param account
+     * @return
+     */
+    Observable<Void> deleteAccount(Account account);
 
 }

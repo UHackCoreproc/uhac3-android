@@ -4,12 +4,18 @@ import javax.inject.Named;
 
 import dagger.Module;
 import dagger.Provides;
+import ph.coreproc.android.uhac3.domain.interactors.account.AddAccountInteractor;
+import ph.coreproc.android.uhac3.domain.interactors.account.AddAccountInteractorImpl;
+import ph.coreproc.android.uhac3.domain.interactors.account.DeleteAccountInteractor;
+import ph.coreproc.android.uhac3.domain.interactors.account.DeleteAccountInteractorImpl;
 import ph.coreproc.android.uhac3.domain.interactors.account.GetAccountListInteractor;
 import ph.coreproc.android.uhac3.domain.interactors.account.GetAccountListInteractorImpl;
 import ph.coreproc.android.uhac3.domain.interactors.transaction.GetTransactionListInteractor;
 import ph.coreproc.android.uhac3.domain.interactors.transaction.GetTransactionListInteractorImpl;
 import ph.coreproc.android.uhac3.domain.interactors.transaction.GetTransactionListOfAccountInteractor;
 import ph.coreproc.android.uhac3.domain.interactors.transaction.GetTransactionListOfAccountInteractorImpl;
+import ph.coreproc.android.uhac3.domain.interactors.transaction.RedeemCouponInteractor;
+import ph.coreproc.android.uhac3.domain.interactors.transaction.RedeemCouponInteractorImpl;
 import ph.coreproc.android.uhac3.domain.interactors.transaction.TransferInteractor;
 import ph.coreproc.android.uhac3.domain.interactors.transaction.TransferInteractorImpl;
 import ph.coreproc.android.uhac3.domain.interactors.user.GetLoggedInUserInteractor;
@@ -112,6 +118,16 @@ public class InteractorModule {
         return getAccountListInteractor;
     }
 
+    @Provides
+    AddAccountInteractor provideAddAccountInteractor(AddAccountInteractorImpl addAccountInteractor) {
+        return addAccountInteractor;
+    }
+
+    @Provides
+    DeleteAccountInteractor provideDeleteAccountInteractor(DeleteAccountInteractorImpl deleteAccountInteractor) {
+        return deleteAccountInteractor;
+    }
+
     // MARK: - End Account
 
     // MARK: - Transaction
@@ -129,6 +145,11 @@ public class InteractorModule {
     @Provides
     TransferInteractor provideTransferInteractor(TransferInteractorImpl transferInteractor) {
         return transferInteractor;
+    }
+
+    @Provides
+    RedeemCouponInteractor provideRedeemCouponInteractor(RedeemCouponInteractorImpl redeemCouponInteractor) {
+        return redeemCouponInteractor;
     }
 
     // MARK: - End Transaction

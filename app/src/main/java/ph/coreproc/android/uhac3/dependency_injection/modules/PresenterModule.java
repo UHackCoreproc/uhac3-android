@@ -4,6 +4,8 @@ import dagger.Module;
 import dagger.Provides;
 import ph.coreproc.android.uhac3.ui.account_list.AccountListPresenter;
 import ph.coreproc.android.uhac3.ui.account_list.AccountListPresenterImpl;
+import ph.coreproc.android.uhac3.ui.add_account.AddAccountPresenter;
+import ph.coreproc.android.uhac3.ui.add_account.AddAccountPresenterImpl;
 import ph.coreproc.android.uhac3.ui.home.HomePresenter;
 import ph.coreproc.android.uhac3.ui.home.HomePresenterImpl;
 import ph.coreproc.android.uhac3.ui.login.LoginPresenter;
@@ -12,6 +14,8 @@ import ph.coreproc.android.uhac3.ui.main.MainPresenter;
 import ph.coreproc.android.uhac3.ui.main.MainPresenterImpl;
 import ph.coreproc.android.uhac3.ui.profile.ProfilePresenter;
 import ph.coreproc.android.uhac3.ui.profile.ProfilePresenterImpl;
+import ph.coreproc.android.uhac3.ui.redeem_coupon.RedeemCouponPresenter;
+import ph.coreproc.android.uhac3.ui.redeem_coupon.RedeemCouponPresenterImpl;
 import ph.coreproc.android.uhac3.ui.register.RegisterPresenter;
 import ph.coreproc.android.uhac3.ui.register.RegisterPresenterImpl;
 import ph.coreproc.android.uhac3.ui.select_contact.SelectContactPresenter;
@@ -77,6 +81,16 @@ public class PresenterModule {
     @Provides
     TransferPresenter providesTransferPresenter(TransferPresenterImpl transferPresenter) {
         return transferPresenter;
+    }
+
+    @Provides
+    RedeemCouponPresenter provideRedeemCouponPresenter(RedeemCouponPresenterImpl redeemCouponPresenter) {
+        return redeemCouponPresenter;
+    }
+
+    @Provides
+    AddAccountPresenter provideAddAccountPresenter(AddAccountPresenterImpl addAccountPresenter) {
+        return addAccountPresenter;
     }
 
 }

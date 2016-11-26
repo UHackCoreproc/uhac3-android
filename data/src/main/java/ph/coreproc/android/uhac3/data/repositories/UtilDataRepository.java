@@ -10,6 +10,8 @@ import ph.coreproc.android.uhac3.data.net.ApiService;
 import ph.coreproc.android.uhac3.domain.models.Account;
 import ph.coreproc.android.uhac3.domain.models.AccountType;
 import ph.coreproc.android.uhac3.domain.models.MobileNumberVerification;
+import ph.coreproc.android.uhac3.domain.models.Transaction;
+import ph.coreproc.android.uhac3.domain.models.params.RedeemCouponParams;
 import ph.coreproc.android.uhac3.domain.models.params.VerifyMobileNumberParams;
 import ph.coreproc.android.uhac3.domain.repositories.UtilRepository;
 import rx.Observable;

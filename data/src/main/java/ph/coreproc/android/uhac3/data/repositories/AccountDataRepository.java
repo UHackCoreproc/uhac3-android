@@ -40,4 +40,18 @@ public class AccountDataRepository implements AccountRepository {
         return Observable.just(accountList);
     }
 
+    @Override
+    public Observable<Account> addAccount(Account account) {
+        account = new Account();
+        account.setTitle("Hello Card");
+        account.setAccountNumber("123");
+        account.setAccountType(new AccountType(1, "Type 1"));
+        return Observable.just(account);
+    }
+
+    @Override
+    public Observable<Void> deleteAccount(Account account) {
+        return Observable.empty();
+    }
+
 }
