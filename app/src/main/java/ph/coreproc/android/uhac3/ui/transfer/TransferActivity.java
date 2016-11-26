@@ -20,6 +20,7 @@ import ph.coreproc.android.uhac3.domain.models.Account;
 import ph.coreproc.android.uhac3.domain.models.Transaction;
 import ph.coreproc.android.uhac3.domain.models.params.TransferParams;
 import ph.coreproc.android.uhac3.ui.BaseActivity;
+import ph.coreproc.android.uhac3.ui.home.HomeActivity;
 
 /**
  * Created by johneris on 27/11/2016.
@@ -173,6 +174,9 @@ public class TransferActivity extends BaseActivity implements TransferView {
         dismissProgressDialog();
         Toast.makeText(mContext, "Success", Toast.LENGTH_SHORT)
                 .show();
+        Intent intent = HomeActivity.newIntent(mContext, true);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(intent);
     }
 
     @Override

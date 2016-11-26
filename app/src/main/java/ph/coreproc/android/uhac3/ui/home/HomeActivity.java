@@ -32,8 +32,15 @@ import ph.coreproc.android.uhac3.ui.transaction_list.TransactionListFragment;
 
 public class HomeActivity extends BaseActivity implements HomeView {
 
+    private static String ARGS_SHOW_HISTORY = "ARGS_SHOW_HISTORY";
+
     public static Intent newIntent(Context context) {
+        return newIntent(context, false);
+    }
+
+    public static Intent newIntent(Context context, boolean showHistory) {
         Intent intent = new Intent(context, HomeActivity.class);
+        intent.putExtra(ARGS_SHOW_HISTORY, showHistory);
         return intent;
     }
 
@@ -54,6 +61,8 @@ public class HomeActivity extends BaseActivity implements HomeView {
 
     private ViewPagerAdapter mViewPagerAdapter;
 
+    private boolean mShowHistory;
+
     @Override
     protected int getLayoutResourceId() {
         return R.layout.activity_home;
@@ -62,6 +71,9 @@ public class HomeActivity extends BaseActivity implements HomeView {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        Bundle bundle = getIntent().getExtras();
+        mShowHistory = bundle.getBoolean(ARGS_SHOW_HISTORY, false);
 
         getApplicationComponent().inject(this);
         mHomePresenter.setHomeView(this);
@@ -109,6 +121,10 @@ public class HomeActivity extends BaseActivity implements HomeView {
         initNavigationView(mNavigationView);
         initViewPager(mViewpager);
         initTabs(mTabs, mViewpager);
+
+        if (mShowHistory) {
+            mViewpager.setCurrentItem(1);
+        }
     }
 
     private void initToolbar() {
