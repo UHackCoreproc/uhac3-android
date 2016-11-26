@@ -1,5 +1,6 @@
 package ph.coreproc.android.uhac3.ui.select_contact;
 
+import android.app.AlertDialog;
 import android.app.SearchManager;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -30,6 +31,7 @@ import ph.coreproc.android.uhac3.models.Contact;
 import ph.coreproc.android.uhac3.ui.BaseActivity;
 import ph.coreproc.android.uhac3.ui.adapters.ContactAdapter;
 import ph.coreproc.android.uhac3.ui.adapters.DividerItemDecoration;
+import ph.coreproc.android.uhac3.ui.amount_remarks.InputAmountAndRemarksActivity;
 
 /**
  * Created by johneris on 26/11/2016.
@@ -146,6 +148,18 @@ public class SelectContactActivity extends BaseActivity implements SelectContact
         );
     }
 
+    public String cleanMobileNumber(String mobileNumber) {
+        String allowedCharacters = "0123456789";
+        String strMobileNumber = "";
+        for (int i = 0; i < mobileNumber.length(); i++) {
+            String character = mobileNumber.charAt(i) + "";
+            if (allowedCharacters.contains(character)) {
+                strMobileNumber += character;
+            }
+        }
+        return strMobileNumber;
+    }
+
     /**
      * {@link SelectContactView} Implementation
      */
@@ -184,19 +198,33 @@ public class SelectContactActivity extends BaseActivity implements SelectContact
     }
 
     @Override
-    public void showAccountListOfContact(final List<Account> accountList) {
+    public void showAccountListOfContact(final List<Account> accountList, final Contact contact) {
         dismissProgressDialog();
+
+        if (accountList.isEmpty()) {
+            String mobileNumber = contact.getPhoneNumber();
+            mobileNumber = cleanMobileNumber(mobileNumber);
+            Intent intent = InputAmountAndRemarksActivity.newIntent(mContext,
+                    mSourceAccount, null, mobileNumber);
+            startActivity(intent);
+            return;
+        }
+
         List<String> accountStringList = new ArrayList<>();
         for (int i = 0; i < accountList.size(); i++) {
             accountStringList.add(accountList.get(i).getAccountType().getName());
         }
         final String[] accountArray = accountStringList.toArray(new String[accountList.size()]);
-        android.app.AlertDialog alertDialog = new android.app.AlertDialog.Builder(mContext)
+        AlertDialog alertDialog = new AlertDialog.Builder(mContext)
                 .setItems(accountArray, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         Account recipienteAccount = accountList.get(which);
-//                        mSourceAccount
+                        String mobileNumber = contact.getPhoneNumber();
+                        mobileNumber = cleanMobileNumber(mobileNumber);
+                        Intent intent = InputAmountAndRemarksActivity.newIntent(mContext,
+                                mSourceAccount, recipienteAccount, mobileNumber);
+                        startActivity(intent);
                     }
                 }).create();
         alertDialog.setTitle("Choose Account Type");

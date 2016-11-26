@@ -39,6 +39,8 @@
 
         <activity android:name=".ui.select_contact.SelectContactActivity"/>
 
+        <activity android:name=".ui.amount_remarks.InputAmountAndRemarksActivity"/>
+
     </application>
 
 </manifest>

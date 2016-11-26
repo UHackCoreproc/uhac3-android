@@ -124,7 +124,7 @@ public class SelectContactPresenterImpl implements SelectContactPresenter {
 
 
     @Override
-    public void getAccountListOfContact(Contact contact) {
+    public void getAccountListOfContact(final Contact contact) {
         if (mSelectContactView == null) {
             return;
         }
@@ -134,7 +134,7 @@ public class SelectContactPresenterImpl implements SelectContactPresenter {
             @Override
             public void onGetAccountListOfContactSuccess(List<Account> accountList) {
                 if (mSelectContactView != null) {
-                    mSelectContactView.showAccountListOfContact(accountList);
+                    mSelectContactView.showAccountListOfContact(accountList, contact);
                 }
             }
 

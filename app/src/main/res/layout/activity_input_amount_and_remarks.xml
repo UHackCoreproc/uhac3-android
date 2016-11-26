@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/include_toolbar"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="@dimen/activity_padding">
+
+            <TextView
+                style="@style/TextView.H1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_large"
+                android:gravity="center"
+                android:text="Enter Amount"/>
+
+            <TextView
+                style="@style/TextView.H2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_medium"
+                android:gravity="center"
+                android:text="PHP"/>
+
+            <EditText
+                android:id="@+id/amountEditText"
+                style="@style/EditText.Primary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_small"
+                android:gravity="center"
+                android:inputType="numberDecimal"
+                android:maxLength="@integer/amount_max_length"
+                android:textSize="@dimen/text_size_xlarge"
+                tools:text="PHP 1234"/>
+
+            <TextView
+                style="@style/TextView.InputLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_medium"
+                android:text="Remarks"/>
+
+            <EditText
+                android:id="@+id/remarksEditText"
+                style="@style/EditText.Primary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_small"
+                android:gravity="top|left"
+                android:inputType="textMultiLine"
+                android:lines="4"
+                android:maxLines="4"
+                android:minLines="4"/>
+
+            <Button
+                android:id="@+id/submitButton"
+                style="@style/Button.Primary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_medium"
+                android:text="@string/verify_mobile_number_button_submit"/>
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

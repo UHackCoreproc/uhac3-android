@@ -82,6 +82,10 @@
     <string name="select_contact_get_account_list_progress">@string/global_dialog_message_please_wait</string>
     <!-- End Select Contact -->
 
+    <!-- Amount -->
+    <string name="activity_amount_remarks_title">Amount</string>
+    <!-- End Amount -->
+
     <!-- Add Account -->
     <string name="activity_title_add_account">Add Account</string>
     <!-- End Add Account -->

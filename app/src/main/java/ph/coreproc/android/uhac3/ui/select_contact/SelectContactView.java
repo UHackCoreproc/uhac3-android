@@ -19,7 +19,7 @@ public interface SelectContactView {
 
     void showGetAccountListOfContactInProgress();
 
-    void showAccountListOfContact(List<Account> accountList);
+    void showAccountListOfContact(List<Account> accountList, Contact contact);
 
     void showGetAccountListOfContactError(ErrorBundle errorBundle);
 
