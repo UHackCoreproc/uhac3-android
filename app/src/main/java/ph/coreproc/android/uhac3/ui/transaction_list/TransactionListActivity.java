@@ -148,7 +148,7 @@ public class TransactionListActivity extends BaseActivity implements Transaction
 
     @OnClick(R.id.fab)
     public void onFabClicked() {
-        Intent intent = SelectContactActivity.newIntent(mContext);
+        Intent intent = SelectContactActivity.newIntent(mContext, mAccount);
         startActivity(intent);
     }
 

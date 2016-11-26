@@ -2,6 +2,7 @@ package ph.coreproc.android.uhac3.ui.select_contact;
 
 import android.app.SearchManager;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -36,8 +37,12 @@ import ph.coreproc.android.uhac3.ui.adapters.DividerItemDecoration;
 
 public class SelectContactActivity extends BaseActivity implements SelectContactView, ContactAdapter.Callback {
 
-    public static Intent newIntent(Context context) {
+    private static String ARGS_SOURCE_ACCOUNT = "ARGS_SOURCE_ACCOUNT";
+
+    public static Intent newIntent(Context context, Account account) {
+        String accountJson = getGsonForBundle().toJson(account);
         Intent intent = new Intent(context, SelectContactActivity.class);
+        intent.putExtra(ARGS_SOURCE_ACCOUNT, accountJson);
         return intent;
     }
 
@@ -56,6 +61,8 @@ public class SelectContactActivity extends BaseActivity implements SelectContact
     private SearchView mSearchView;
     private ContactAdapter mContactAdapter;
 
+    private Account mSourceAccount;
+
     @Override
     protected int getLayoutResourceId() {
         return R.layout.activity_select_contact;
@@ -64,6 +71,10 @@ public class SelectContactActivity extends BaseActivity implements SelectContact
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        Bundle bundle = getIntent().getExtras();
+        String accountJson = bundle.getString(ARGS_SOURCE_ACCOUNT);
+        mSourceAccount = getGsonForBundle().fromJson(accountJson, Account.class);
 
         getApplicationComponent().inject(this);
         mSelectContactPresenter.setSelectContactView(this);
@@ -173,13 +184,32 @@ public class SelectContactActivity extends BaseActivity implements SelectContact
     }
 
     @Override
-    public void showAccountListOfContact(List<Account> accountList) {
+    public void showAccountListOfContact(final List<Account> accountList) {
         dismissProgressDialog();
+        List<String> accountStringList = new ArrayList<>();
+        for (int i = 0; i < accountList.size(); i++) {
+            accountStringList.add(accountList.get(i).getAccountType().getName());
+        }
+        final String[] accountArray = accountStringList.toArray(new String[accountList.size()]);
+        android.app.AlertDialog alertDialog = new android.app.AlertDialog.Builder(mContext)
+                .setItems(accountArray, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Account recipienteAccount = accountList.get(which);
+//                        mSourceAccount
+                    }
+                }).create();
+        alertDialog.setTitle("Choose Account Type");
+        alertDialog.setCancelable(true);
+        alertDialog.show();
     }
 
     @Override
     public void showGetAccountListOfContactError(ErrorBundle errorBundle) {
         dismissProgressDialog();
+        errorBundle = handleGlobalError(errorBundle);
+        showAlertDialog(getString(R.string.global_dialog_title_error),
+                errorBundle.getErrorMessage());
     }
 
     @Override
