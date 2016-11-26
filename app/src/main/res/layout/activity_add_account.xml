@@ -35,7 +35,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/spacing_medium"
-                android:inputType="number"
                 android:text="@string/add_account_label_account_no"/>
 
             <EditText
@@ -43,7 +42,8 @@
                 style="@style/EditText.Primary"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/spacing_small"/>
+                android:layout_marginTop="@dimen/spacing_small"
+                android:inputType="number"/>
 
             <TextView
                 style="@style/TextView.InputLabel"
