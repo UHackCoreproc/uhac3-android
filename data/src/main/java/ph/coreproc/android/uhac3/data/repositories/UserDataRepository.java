@@ -64,11 +64,13 @@ public class UserDataRepository implements UserRepository {
 
     @Override
     public Observable<User> login(LoginParams loginParams) {
+        // get header X-Authorization
         return Observable.just(new User());
     }
 
     @Override
     public Observable<User> register(RegisterParams registerParams) {
+        // get header X-Authorization
         return Observable.just(new User());
     }
 

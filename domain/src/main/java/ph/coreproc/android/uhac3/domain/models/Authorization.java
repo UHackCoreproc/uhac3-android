@@ -6,5 +6,17 @@ package ph.coreproc.android.uhac3.domain.models;
 
 public class Authorization {
 
+    private String mApiKey;
 
+    public Authorization(String apiKey) {
+        mApiKey = apiKey;
+    }
+
+    public String getApiKey() {
+        return mApiKey;
+    }
+
+    public void setApiKey(String apiKey) {
+        mApiKey = apiKey;
+    }
 }

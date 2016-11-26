@@ -5,6 +5,6 @@ package ph.coreproc.android.uhac3.data.net;
  */
 public interface ApiService {
 
-    String AUTHORIZATION = "AUTHORIZATION";
+    String AUTHORIZATION = "X-Authorization";
 
 }

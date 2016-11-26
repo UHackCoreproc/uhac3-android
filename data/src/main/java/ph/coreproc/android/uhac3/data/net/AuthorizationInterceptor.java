@@ -36,8 +36,7 @@ public class AuthorizationInterceptor implements Interceptor {
             Authorization authorization = user.getAuthorization();
             // add authorization headers
             requestBuilder = original.newBuilder()
-//                    .addHeader(ApiService.AUTHORIZATION, authorization.getToken())
-            ;
+                    .addHeader(ApiService.AUTHORIZATION, authorization.getApiKey());
         }
 
         Request request = requestBuilder.build();
