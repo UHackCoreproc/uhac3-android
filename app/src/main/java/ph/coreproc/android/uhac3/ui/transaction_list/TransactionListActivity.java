@@ -14,6 +14,8 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,6 +23,7 @@ import javax.inject.Inject;
 
 import butterknife.BindView;
 import butterknife.OnClick;
+import de.hdodenhof.circleimageview.CircleImageView;
 import ph.coreproc.android.uhac3.R;
 import ph.coreproc.android.uhac3.domain.errors.ErrorBundle;
 import ph.coreproc.android.uhac3.domain.models.Account;
@@ -45,6 +48,9 @@ public class TransactionListActivity extends BaseActivity implements Transaction
         intent.putExtra(ARGS_ACCOUNT, accountJson);
         return intent;
     }
+
+    @BindView(R.id.cirleImageView)
+    CircleImageView mCirleImageView;
 
     @BindView(R.id.accountNoTextView)
     TextView mAccountNoTextView;
@@ -118,6 +124,14 @@ public class TransactionListActivity extends BaseActivity implements Transaction
         initToolbar(getString(R.string.activity_transaction_list_title), true);
         initRecyclerView(mTransactionRecyclerView);
         initSwipeRefreshLayout(mSwipeRefreshLayout);
+
+        if (mAccount.getAccountType().getId() == 1) {
+            Glide.with(mContext).load(R.drawable.ic_unionbank).into(mCirleImageView);
+        } else {
+            Glide.with(mContext).load(R.drawable.ic_credit_card).into(mCirleImageView);
+        }
+        mAccountNoTextView.setText(mAccount.getAccountNumber());
+        mAccountTypeTextView.setText(mAccount.getAccountType().getName());
     }
 
     private void initRecyclerView(RecyclerView recyclerView) {
