@@ -18,13 +18,14 @@
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/imageView"
-            android:layout_width="80dp"
-            android:layout_height="80dp"/>
+            android:layout_width="64dp"
+            android:layout_height="64dp"/>
 
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/spacing_medium"
+            android:layout_weight="1"
             android:orientation="vertical">
 
             <TextView
@@ -52,6 +53,14 @@
                 tools:text="Account No"/>
 
         </LinearLayout>
+
+        <TextView
+            android:id="@+id/amountTextView"
+            style="@style/TextView.H1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/accent"
+            tools:text="Php 123"/>
 
     </LinearLayout>
 

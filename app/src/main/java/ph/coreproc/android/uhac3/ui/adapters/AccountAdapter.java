@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 
+import java.text.DecimalFormat;
 import java.util.List;
 
 import butterknife.BindView;
@@ -65,6 +66,13 @@ public class AccountAdapter extends RecyclerView.Adapter<AccountAdapter.AccountV
         holder.mTitleTextView.setText(account.getTitle());
         holder.mAccountNoTextView.setText(account.getAccountNumber());
         holder.mAccountTypeTextView.setText(account.getAccountType().getName());
+        if (account.getBalance() != null) {
+            holder.mAmountTextView.setText(toPesoFormat(account.getBalance()));
+        }
+    }
+
+    public String toPesoFormat(double peso) {
+        return "₱" + new DecimalFormat("#,###,##0.00").format(peso);
     }
 
     @Override
@@ -94,6 +102,9 @@ public class AccountAdapter extends RecyclerView.Adapter<AccountAdapter.AccountV
 
         @BindView(R.id.accountTypeTextView)
         TextView mAccountTypeTextView;
+
+        @BindView(R.id.amountTextView)
+        TextView mAmountTextView;
 
         interface Callback {
             void onAccountClicked(int position);

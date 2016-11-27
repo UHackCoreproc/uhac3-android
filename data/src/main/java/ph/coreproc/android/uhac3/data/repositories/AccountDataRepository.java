@@ -35,6 +35,9 @@ public class AccountDataRepository implements AccountRepository {
             account.setTitle("Hello Card");
             account.setAccountNumber("123");
             account.setAccountType(new AccountType(i, "Type " + i));
+            if (i == 2) {
+                account.setBalance(new Double(12000));
+            }
             accountList.add(account);
         }
         return Observable.just(accountList);
