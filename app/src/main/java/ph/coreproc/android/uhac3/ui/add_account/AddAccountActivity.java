@@ -105,7 +105,6 @@ public class AddAccountActivity extends BaseActivity implements AddAccountView {
         final List<AccountType> accountTypeList = new ArrayList<>();
         accountTypeList.add(new AccountType(1, "Bank Account"));
         accountTypeList.add(new AccountType(2, "Debit / Credit Card"));
-        accountTypeList.add(new AccountType(3, "Online Payment Gateway"));
         List<String> accountTypeStringList = new ArrayList<>();
         for (int i = 0; i < accountTypeList.size(); i++) {
             accountTypeStringList.add(accountTypeList.get(i).getName());

@@ -65,6 +65,9 @@ public class User {
     }
 
     public String getMobileNumber() {
+        if (mMobileNumberVerification == null) {
+            return "";
+        }
         return mMobileNumberVerification.getMobileNumber();
     }
 

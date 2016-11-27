@@ -39,8 +39,8 @@ public class TransferParams {
         mAmount = amount;
         mRemarks = remarks;
 
-        mSourceAccountId = mSourceAccount.getId() + "";
-        mTargetAccountId = mRecipientAccount.getId() + "";
+        mSourceAccountId = mSourceAccount != null ? mSourceAccount.getId() + "" : "";
+        mTargetAccountId = mRecipientAccount != null ? mRecipientAccount.getId() + "" : "";
     }
 
     public Account getSourceAccount() {

@@ -65,6 +65,9 @@ public class SelectContactActivity extends BaseActivity implements SelectContact
 
     private Account mSourceAccount;
 
+    @Nullable
+    private Contact mContact;
+
     @Override
     protected int getLayoutResourceId() {
         return R.layout.activity_select_contact;
@@ -236,6 +239,13 @@ public class SelectContactActivity extends BaseActivity implements SelectContact
     public void showGetAccountListOfContactError(ErrorBundle errorBundle) {
         dismissProgressDialog();
         errorBundle = handleGlobalError(errorBundle);
+        String errorMessage = errorBundle.getErrorMessage();
+        if (errorMessage.equals("Mobile number not found.") && mContact != null) {
+            Intent intent = InputAmountAndRemarksActivity.newIntent(mContext,
+                    mSourceAccount, null, mContact.getPhoneNumber());
+            startActivity(intent);
+            return;
+        }
         showAlertDialog(getString(R.string.global_dialog_title_error),
                 errorBundle.getErrorMessage());
     }
@@ -247,6 +257,7 @@ public class SelectContactActivity extends BaseActivity implements SelectContact
 
     @Override
     public void onContactClicked(Contact contact) {
+        mContact = contact;
         mSelectContactPresenter.getAccountListOfContact(contact);
     }
 }
