@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
@@ -16,6 +17,136 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="?attr/selectableItemBackground"
+                android:clickable="true"
+                android:orientation="horizontal"
+                android:padding="@dimen/spacing_medium">
+
+                <TextView
+                    android:id="@+id/referenceNoTextView"
+                    style="@style/TextView.H1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="0901-12312-123"
+                    android:textColor="@color/accent"
+                    android:textStyle="italic|bold"/>
+
+                <TextView
+                    android:id="@+id/statusTextView"
+                    style="@style/TextView.H2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    tools:text="COMPLETED"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="?attr/selectableItemBackground"
+                android:clickable="true"
+                android:orientation="horizontal"
+                android:padding="@dimen/spacing_medium">
+
+                <TextView
+                    style="@style/TextView.H2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/spacing_medium"
+                    android:text="Source"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/sourceTextView"
+                    style="@style/TextView.H2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="right"
+                    tools:text="John Eris Villanueva"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="?attr/selectableItemBackground"
+                android:clickable="true"
+                android:orientation="horizontal"
+                android:padding="@dimen/spacing_medium">
+
+                <TextView
+                    style="@style/TextView.H2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/spacing_medium"
+                    android:text="Recipient"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/recipientTextView"
+                    style="@style/TextView.H2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="right"
+                    tools:text="John Eris Villanueva"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="?attr/selectableItemBackground"
+                android:clickable="true"
+                android:orientation="horizontal"
+                android:padding="@dimen/spacing_medium">
+
+                <TextView
+                    style="@style/TextView.H2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/spacing_medium"
+                    android:text="Amount"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/amountTextView"
+                    style="@style/TextView.H2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="right"
+                    tools:text="John Eris Villanueva"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="?attr/selectableItemBackground"
+                android:clickable="true"
+                android:orientation="horizontal"
+                android:padding="@dimen/spacing_medium">
+
+                <TextView
+                    style="@style/TextView.H2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/spacing_medium"
+                    android:text="Remarks"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/remarksTextView"
+                    style="@style/TextView.H2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="right"
+                    tools:text="John Eris Villanueva"/>
+            </LinearLayout>
 
         </LinearLayout>
 

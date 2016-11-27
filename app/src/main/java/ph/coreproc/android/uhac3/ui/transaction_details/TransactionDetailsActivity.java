@@ -5,7 +5,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.MenuItem;
+import android.widget.TextView;
 
+import java.text.DecimalFormat;
+
+import butterknife.BindView;
 import ph.coreproc.android.uhac3.R;
 import ph.coreproc.android.uhac3.domain.models.Transaction;
 import ph.coreproc.android.uhac3.ui.BaseActivity;
@@ -24,6 +28,24 @@ public class TransactionDetailsActivity extends BaseActivity {
         intent.putExtra(ARGS_TRANSACTION, transactionJson);
         return intent;
     }
+
+    @BindView(R.id.referenceNoTextView)
+    TextView mReferenceNoTextView;
+
+    @BindView(R.id.statusTextView)
+    TextView mStatusTextView;
+
+    @BindView(R.id.sourceTextView)
+    TextView mSourceTextView;
+
+    @BindView(R.id.recipientTextView)
+    TextView mRecipientTextView;
+
+    @BindView(R.id.amountTextView)
+    TextView mAmountTextView;
+
+    @BindView(R.id.remarksTextView)
+    TextView mRemarksTextView;
 
     private Transaction mTransaction;
 
@@ -55,6 +77,19 @@ public class TransactionDetailsActivity extends BaseActivity {
 
     private void initUI() {
         initToolbar(getString(R.string.activity_transaction_details_title), true);
+
+        mReferenceNoTextView.setText(mTransaction.getReferenceNumber());
+        mStatusTextView.setText(mTransaction.getStatus());
+        mSourceTextView.setText(mTransaction.getSourceMobileNo());
+        mRecipientTextView.setText(mTransaction.getRecipientMobileNo());
+        mAmountTextView.setText(toPesoFormat(mTransaction.getAmount()));
+
+        String remarks = mTransaction.getRemarks();
+        mRemarksTextView.setText(remarks.isEmpty() ? remarks : "N/A");
+    }
+
+    public String toPesoFormat(double peso) {
+        return "₱" + new DecimalFormat("#,###,##0.00").format(peso);
     }
 
 }
