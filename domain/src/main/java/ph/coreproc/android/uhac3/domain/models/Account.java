@@ -23,6 +23,9 @@ public class Account {
     @SerializedName("accountType")
     private AccountType mAccountType;
 
+    @SerializedName("balance")
+    private Double mBalance;
+
     public Account() {
     }
 
@@ -33,6 +36,7 @@ public class Account {
         mDescription = description;
         mAccountNumber = accountNumber;
         mAccountType = accountType;
+        mBalance = null;
     }
 
     public Long getId() {
@@ -73,5 +77,13 @@ public class Account {
 
     public void setAccountType(AccountType accountType) {
         mAccountType = accountType;
+    }
+
+    public Double getBalance() {
+        return mBalance;
+    }
+
+    public void setBalance(Double balance) {
+        mBalance = balance;
     }
 }

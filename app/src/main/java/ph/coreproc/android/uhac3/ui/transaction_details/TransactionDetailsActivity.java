@@ -85,7 +85,7 @@ public class TransactionDetailsActivity extends BaseActivity {
         mAmountTextView.setText(toPesoFormat(mTransaction.getAmount()));
 
         String remarks = mTransaction.getRemarks();
-        mRemarksTextView.setText(remarks.isEmpty() ? remarks : "N/A");
+        mRemarksTextView.setText(remarks != null && !remarks.isEmpty() ? remarks : "N/A");
     }
 
     public String toPesoFormat(double peso) {
