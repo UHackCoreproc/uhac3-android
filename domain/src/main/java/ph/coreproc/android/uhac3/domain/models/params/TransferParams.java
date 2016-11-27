@@ -16,7 +16,11 @@ public class TransferParams {
     @SerializedName("recipient")
     private Account mRecipientAccount;
 
+    @SerializedName("source_account_id")
+    private String mSourceAccountId;
 
+    @SerializedName("target_account_id")
+    private String mTargetAccountId;
 
     @SerializedName("mobile_number")
     private String mMobileNumber;
@@ -33,6 +37,65 @@ public class TransferParams {
         mRecipientAccount = recipientAccount;
         mMobileNumber = mobileNumber;
         mAmount = amount;
+        mRemarks = remarks;
+
+        mSourceAccountId = mSourceAccount.getId() + "";
+        mTargetAccountId = mRecipientAccount.getId() + "";
+    }
+
+    public Account getSourceAccount() {
+        return mSourceAccount;
+    }
+
+    public void setSourceAccount(Account sourceAccount) {
+        mSourceAccount = sourceAccount;
+    }
+
+    public Account getRecipientAccount() {
+        return mRecipientAccount;
+    }
+
+    public void setRecipientAccount(Account recipientAccount) {
+        mRecipientAccount = recipientAccount;
+    }
+
+    public String getSourceAccountId() {
+        return mSourceAccountId;
+    }
+
+    public void setSourceAccountId(String sourceAccountId) {
+        mSourceAccountId = sourceAccountId;
+    }
+
+    public String getTargetAccountId() {
+        return mTargetAccountId;
+    }
+
+    public void setTargetAccountId(String targetAccountId) {
+        mTargetAccountId = targetAccountId;
+    }
+
+    public String getMobileNumber() {
+        return mMobileNumber;
+    }
+
+    public void setMobileNumber(String mobileNumber) {
+        mMobileNumber = mobileNumber;
+    }
+
+    public double getAmount() {
+        return mAmount;
+    }
+
+    public void setAmount(double amount) {
+        mAmount = amount;
+    }
+
+    public String getRemarks() {
+        return mRemarks;
+    }
+
+    public void setRemarks(String remarks) {
         mRemarks = remarks;
     }
 }

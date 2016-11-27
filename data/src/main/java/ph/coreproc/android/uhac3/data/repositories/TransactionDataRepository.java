@@ -34,7 +34,8 @@ public class TransactionDataRepository implements TransactionRepository {
 
     @Override
     public Observable<Transaction> tranfer(TransferParams transferParams) {
-        return mApiService.tranfer(transferParams)
+        long accountId = transferParams.getRecipientAccount().getId();
+        return mApiService.tranfer(accountId, transferParams)
                 .flatMap(new Func1<Response<Transaction>, Observable<Transaction>>() {
                     @Override
                     public Observable<Transaction> call(Response<Transaction> response) {
@@ -88,7 +89,7 @@ public class TransactionDataRepository implements TransactionRepository {
 
     @Override
     public Observable<List<Transaction>> getTransactionList(Account account) {
-        return mApiService.getTransactionList(account)
+        return mApiService.getTransactionList(account.getId(), account)
                 .flatMap(new Func1<Response<List<Transaction>>, Observable<List<Transaction>>>() {
                     @Override
                     public Observable<List<Transaction>> call(Response<List<Transaction>> response) {

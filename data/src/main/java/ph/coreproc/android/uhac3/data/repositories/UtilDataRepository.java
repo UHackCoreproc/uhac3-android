@@ -33,7 +33,7 @@ public class UtilDataRepository implements UtilRepository {
 
     @Override
     public Observable<MobileNumberVerification> verifyMobileNumber(VerifyMobileNumberParams verifyMobileNumberParams) {
-        return mApiService.verifyMobileNumber(verifyMobileNumberParams)
+        return mApiService.verifyMobileNumber(verifyMobileNumberParams.getMobileNumber())
                 .flatMap(new Func1<Response<MobileNumberVerification>, Observable<MobileNumberVerification>>() {
                     @Override
                     public Observable<MobileNumberVerification> call(Response<MobileNumberVerification> response) {

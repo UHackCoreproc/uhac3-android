@@ -8,7 +8,7 @@ import com.google.gson.annotations.SerializedName;
 
 public class Transaction {
 
-    @SerializedName("ref_no")
+    @SerializedName("reference_number")
     private String mReferenceNumber;
 
     @SerializedName("source")
@@ -17,6 +17,12 @@ public class Transaction {
     // NULLABLE
     @SerializedName("recipient")
     private String mRecipientMobileNo;
+
+    @SerializedName("sourceAccount")
+    private User mSourceUser;
+
+    @SerializedName("targetAccount")
+    private User mRecipientUser;
 
     @SerializedName("amount")
     private double mAmount;
@@ -36,7 +42,10 @@ public class Transaction {
     }
 
     public String getSourceMobileNo() {
-        return mSourceMobileNo;
+        if (mSourceUser == null) {
+            return "";
+        }
+        return mSourceUser.getMobileNumber();
     }
 
     public void setSourceMobileNo(String sourceMobileNo) {
@@ -44,7 +53,10 @@ public class Transaction {
     }
 
     public String getRecipientMobileNo() {
-        return mRecipientMobileNo;
+        if (mRecipientUser == null) {
+            return "";
+        }
+        return mRecipientUser.getMobileNumber();
     }
 
     public void setRecipientMobileNo(String recipientMobileNo) {

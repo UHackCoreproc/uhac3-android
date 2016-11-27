@@ -35,9 +35,10 @@ public class ResponseDataTypeAdapterFactory implements TypeAdapterFactory {
                     JsonObject jsonObject = jsonElement.getAsJsonObject();
                     if (jsonObject.has("data") && jsonObject.get("data").isJsonObject()) {
                         jsonElement = jsonObject.get("data");
+                    } else if (jsonObject.has("data") && jsonObject.get("data").isJsonArray()) {
+                        jsonElement = jsonObject.get("data").getAsJsonArray();
                     }
                 }
-
                 return delegate.fromJsonTree(jsonElement);
             }
         }.nullSafe();

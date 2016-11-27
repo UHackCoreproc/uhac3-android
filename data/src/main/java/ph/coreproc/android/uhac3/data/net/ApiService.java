@@ -10,13 +10,13 @@ import ph.coreproc.android.uhac3.domain.models.params.LoginParams;
 import ph.coreproc.android.uhac3.domain.models.params.RedeemCouponParams;
 import ph.coreproc.android.uhac3.domain.models.params.RegisterParams;
 import ph.coreproc.android.uhac3.domain.models.params.TransferParams;
-import ph.coreproc.android.uhac3.domain.models.params.VerifyMobileNumberParams;
 import retrofit2.Response;
 import retrofit2.http.Body;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
+import retrofit2.http.Path;
 import rx.Observable;
 
 /**
@@ -50,8 +50,9 @@ public interface ApiService {
             @Body Account account
     );
 
-    @POST("api/v1/")
+    @POST("api/v1/accounts/{account_id}/transactions/make")
     Observable<Response<Transaction>> tranfer(
+            @Path("account_id") long accountId,
             @Body TransferParams transferParams
     );
 
@@ -60,17 +61,19 @@ public interface ApiService {
             @Body RedeemCouponParams redeemCouponParams
     );
 
-    @GET("api/v1/")
+    @GET("api/v1/transactions")
     Observable<Response<List<Transaction>>> getTransactionList();
 
-    @GET("api/v1/")
+    @GET("api/v1/accounts/{account_id}/transactions")
     Observable<Response<List<Transaction>>> getTransactionList(
+            @Path("account_id") long accountId,
             @Body Account account
     );
 
-    @POST("api/v1/")
+    @FormUrlEncoded
+    @POST("api/v1/mobile-number/verify")
     Observable<Response<MobileNumberVerification>> verifyMobileNumber(
-            @Body VerifyMobileNumberParams verifyMobileNumberParams
+            @Field("mobile_number") String mobileNumber
     );
 
 }
