@@ -26,6 +26,8 @@ import rx.functions.Func0;
 
 public class ContactsGetter {
 
+    public static List<Contact> sContactList = null;
+
     public static Observable<List<Contact>> getContacts(final Context context) {
         return Observable.defer(new Func0<Observable<List<Contact>>>() {
             @Override

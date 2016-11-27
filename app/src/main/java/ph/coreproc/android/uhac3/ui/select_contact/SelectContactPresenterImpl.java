@@ -53,22 +53,28 @@ public class SelectContactPresenterImpl implements SelectContactPresenter {
         }
 
         mSelectContactView.showLoadingContactList();
-        ContactsGetter.getContacts(mContext)
-                .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new DefaultSubscriber<List<Contact>>() {
-                    @Override
-                    public void onError(ErrorBundle errorBundle) {
+        if (ContactsGetter.sContactList == null) {
+            ContactsGetter.getContacts(mContext)
+                    .subscribeOn(Schedulers.io())
+                    .observeOn(AndroidSchedulers.mainThread())
+                    .subscribe(new DefaultSubscriber<List<Contact>>() {
+                        @Override
+                        public void onError(ErrorBundle errorBundle) {
 
-                    }
+                        }
 
-                    @Override
-                    public void onNext(List<Contact> contactList) {
-                        Collections.sort(contactList);
-                        mContactList = contactList;
-                        mSelectContactView.showContactList(contactList);
-                    }
-                });
+                        @Override
+                        public void onNext(List<Contact> contactList) {
+                            Collections.sort(contactList);
+                            ContactsGetter.sContactList = contactList;
+                            mContactList = contactList;
+                            mSelectContactView.showContactList(contactList);
+                        }
+                    });
+        } else {
+            mContactList = ContactsGetter.sContactList;
+            mSelectContactView.showContactList(mContactList);
+        }
     }
 
     @Override
