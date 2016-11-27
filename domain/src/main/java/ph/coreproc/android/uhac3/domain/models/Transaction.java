@@ -12,11 +12,11 @@ public class Transaction {
     private String mReferenceNumber;
 
     @SerializedName("source")
-    private Account mSourceAccount;
+    private String mSourceMobileNo;
 
     // NULLABLE
     @SerializedName("recipient")
-    private Account mRecipientAccount;
+    private String mRecipientMobileNo;
 
     @SerializedName("amount")
     private double mAmount;
@@ -35,20 +35,20 @@ public class Transaction {
         mReferenceNumber = referenceNumber;
     }
 
-    public Account getSourceAccount() {
-        return mSourceAccount;
+    public String getSourceMobileNo() {
+        return mSourceMobileNo;
     }
 
-    public void setSourceAccount(Account sourceAccount) {
-        mSourceAccount = sourceAccount;
+    public void setSourceMobileNo(String sourceMobileNo) {
+        mSourceMobileNo = sourceMobileNo;
     }
 
-    public Account getRecipientAccount() {
-        return mRecipientAccount;
+    public String getRecipientMobileNo() {
+        return mRecipientMobileNo;
     }
 
-    public void setRecipientAccount(Account recipientAccount) {
-        mRecipientAccount = recipientAccount;
+    public void setRecipientMobileNo(String recipientMobileNo) {
+        mRecipientMobileNo = recipientMobileNo;
     }
 
     public double getAmount() {

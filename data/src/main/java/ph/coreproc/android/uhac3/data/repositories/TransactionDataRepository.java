@@ -31,14 +31,26 @@ public class TransactionDataRepository implements TransactionRepository {
 
     @Override
     public Observable<Transaction> tranfer(TransferParams transferParams) {
-        return Observable.just(new Transaction());
+        Transaction transaction = new Transaction();
+        transaction.setStatus("COMPLETED");
+        transaction.setReferenceNumber("1234567890");
+        transaction.setSourceMobileNo("09123456789");
+        transaction.setRecipientMobileNo("09123456789");
+        transaction.setAmount(5000);
+        return Observable.just(transaction);
     }
 
     @Override
     public Observable<List<Transaction>> getTransactionList() {
         List<Transaction> transactionList = new ArrayList<>();
         for (int i = 0; i < 6; i++) {
-            transactionList.add(new Transaction());
+            Transaction transaction = new Transaction();
+            transaction.setStatus("COMPLETED");
+            transaction.setReferenceNumber("1234567890");
+            transaction.setSourceMobileNo("09123456789");
+            transaction.setRecipientMobileNo("09123456789");
+            transaction.setAmount(5000);
+            transactionList.add(transaction);
         }
         return Observable.just(transactionList);
     }
@@ -47,13 +59,25 @@ public class TransactionDataRepository implements TransactionRepository {
     public Observable<List<Transaction>> getTransactionList(Account account) {
         List<Transaction> transactionList = new ArrayList<>();
         for (int i = 0; i < 6; i++) {
-            transactionList.add(new Transaction());
+            Transaction transaction = new Transaction();
+            transaction.setStatus("COMPLETED");
+            transaction.setReferenceNumber("1234567890");
+            transaction.setSourceMobileNo("09123456789");
+            transaction.setRecipientMobileNo("09123456789");
+            transaction.setAmount(5000);
+            transactionList.add(transaction);
         }
         return Observable.just(transactionList);
     }
 
     @Override
     public Observable<Transaction> redeemCoupon(RedeemCouponParams redeemCouponParams) {
-        return Observable.just(new Transaction());
+        Transaction transaction = new Transaction();
+        transaction.setStatus("COMPLETED");
+        transaction.setReferenceNumber("1234567890");
+        transaction.setSourceMobileNo("09123456789");
+        transaction.setRecipientMobileNo("09123456789");
+        transaction.setAmount(5000);
+        return Observable.just(transaction);
     }
 }

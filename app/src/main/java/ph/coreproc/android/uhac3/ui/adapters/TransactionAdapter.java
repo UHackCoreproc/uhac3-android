@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import java.text.DecimalFormat;
 import java.util.List;
 
 import butterknife.BindView;
@@ -54,7 +55,15 @@ public class TransactionAdapter extends RecyclerView.Adapter<TransactionAdapter.
     @Override
     public void onBindViewHolder(TransactionViewHolder holder, int position) {
         Transaction transaction = mTransactionList.get(position);
-        holder.mSourceTextView.setText(transaction.getReferenceNumber());
+        holder.mReferenceNoTextView.setText(transaction.getReferenceNumber());
+        holder.mStatusTextView.setText(transaction.getStatus());
+        holder.mSourceTextView.setText(transaction.getSourceMobileNo());
+        holder.mRecipientTextView.setText(transaction.getRecipientMobileNo());
+        holder.mAmountTextView.setText(toPesoFormat(transaction.getAmount()));
+    }
+
+    public String toPesoFormat(double peso) {
+        return "₱" + new DecimalFormat("#,###,##0.00").format(peso);
     }
 
     @Override
@@ -72,6 +81,9 @@ public class TransactionAdapter extends RecyclerView.Adapter<TransactionAdapter.
 
         @BindView(R.id.containerView)
         LinearLayout mContainerView;
+
+        @BindView(R.id.referenceNoTextView)
+        TextView mReferenceNoTextView;
 
         @BindView(R.id.statusTextView)
         TextView mStatusTextView;

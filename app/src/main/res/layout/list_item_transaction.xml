@@ -17,19 +17,19 @@
 
         <TextView
             android:id="@+id/referenceNoTextView"
-            style="@style/TextView.H2"
+            style="@style/TextView.H1"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="REFERENCE NO"
-            android:textStyle="bold"/>
+            android:text="REF 0901-12312-123"
+            android:textColor="@color/accent"
+            android:textStyle="italic|bold"/>
 
         <TextView
             android:id="@+id/statusTextView"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_gravity="top|end"
-            android:textStyle="italic"
             tools:text="STATUS"/>
 
     </LinearLayout>
@@ -38,6 +38,7 @@
         style="@style/TextView.H2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_small"
         android:text="Source"
         android:textStyle="bold"/>
 
@@ -100,8 +101,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/spacing_xsmall"
                 android:text="Php 123.00"
-                android:textColor="@color/accent"
-                android:textStyle="bold"/>
+                android:textColor="@color/accent"/>
 
         </LinearLayout>
 
