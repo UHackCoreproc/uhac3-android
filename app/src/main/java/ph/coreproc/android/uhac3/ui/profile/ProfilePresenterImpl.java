@@ -2,7 +2,6 @@ package ph.coreproc.android.uhac3.ui.profile;
 
 import javax.inject.Inject;
 
-import ph.coreproc.android.uhac3.domain.errors.ErrorBundle;
 import ph.coreproc.android.uhac3.domain.interactors.user.GetLoggedInUserInteractor;
 import ph.coreproc.android.uhac3.domain.interactors.user.GetUserInteractor;
 import ph.coreproc.android.uhac3.domain.models.User;
@@ -36,29 +35,31 @@ public class ProfilePresenterImpl implements ProfilePresenter {
             return;
         }
 
-        mProfileView.showGetUserInProgress();
-        mGetUserInteractor.getUser(new GetUserInteractor.Callback() {
-            @Override
-            public void onGetUserSuccess(User user) {
-                if (mProfileView != null) {
-                    mProfileView.showGetUserSuccess(user);
-                }
-            }
-
-            @Override
-            public void onGetUserError(ErrorBundle errorBundle) {
-                if (mProfileView != null) {
-                    mProfileView.showGetUserError(errorBundle);
-                }
-            }
-
-            @Override
-            public void onGetUserCancelled() {
-                if (mProfileView != null) {
-                    mProfileView.showGetUserCancelled();
-                }
-            }
-        });
+//        mProfileView.showGetUserInProgress();
+//        mGetUserInteractor.getUser(new GetUserInteractor.Callback() {
+//            @Override
+//            public void onGetUserSuccess(User user) {
+//                if (mProfileView != null) {
+//                    mProfileView.showGetUserSuccess(user);
+//                }
+//            }
+//
+//            @Override
+//            public void onGetUserError(ErrorBundle errorBundle) {
+//                if (mProfileView != null) {
+//                    mProfileView.showGetUserError(errorBundle);
+//                }
+//            }
+//
+//            @Override
+//            public void onGetUserCancelled() {
+//                if (mProfileView != null) {
+//                    mProfileView.showGetUserCancelled();
+//                }
+//            }
+//        });
+        User user = mGetLoggedInUserInteractor.getLoggedInUser();
+        mProfileView.showGetUserSuccess(user);
     }
 
     @Override

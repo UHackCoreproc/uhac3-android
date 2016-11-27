@@ -8,6 +8,7 @@ import javax.inject.Inject;
 
 import ph.coreproc.android.uhac3.data.net.ApiErrorUtil;
 import ph.coreproc.android.uhac3.data.net.ApiService;
+import ph.coreproc.android.uhac3.domain.models.MobileNumberVerification;
 import ph.coreproc.android.uhac3.domain.models.User;
 import ph.coreproc.android.uhac3.domain.models.params.LoginParams;
 import ph.coreproc.android.uhac3.domain.models.params.RegisterParams;
@@ -71,7 +72,13 @@ public class UserDataRepository implements UserRepository {
     @Override
     public Observable<User> register(RegisterParams registerParams) {
         // get header X-Authorization
-        return Observable.just(new User());
+        User user = new User();
+        user.setAvatarUrl("https://scontent-hkg3-1.xx.fbcdn.net/v/t1.0-9/14991805_1484009634949793_1187554488007618811_n.jpg?_nc_eui2=v1%3AAeGcIbbsS1iuoCHIOaoCyI41tHUPsVxRCGUeKJj3BH8eIjEuVfliLpZvGAeEhEfWoueAfIF1_MizDgGJPQJPREIabn3XY4crng8Sml96wtf-Fg&oh=05f66d8dedf3be9d4f367587c1705955&oe=58B3D43B");
+        user.setFirstName("John Eris");
+        user.setLastName("Villanueva");
+        user.setEmail("eris.villanueva@coreproc.ph");
+        user.setMobileNumberVerification(new MobileNumberVerification("09753966346", "1234"));
+        return Observable.just(user);
     }
 
     @Override

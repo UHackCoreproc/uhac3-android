@@ -7,9 +7,14 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AlertDialog;
 import android.view.MenuItem;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+import com.bumptech.glide.Glide;
 
 import javax.inject.Inject;
 
+import butterknife.BindView;
 import ph.coreproc.android.uhac3.R;
 import ph.coreproc.android.uhac3.domain.errors.ErrorBundle;
 import ph.coreproc.android.uhac3.domain.models.User;
@@ -31,6 +36,18 @@ public class ProfileActivity extends BaseActivity implements ProfileView {
 
     @Nullable
     private User mUser;
+
+    @BindView(R.id.avatarImageView)
+    ImageView mAvatarImageView;
+
+    @BindView(R.id.mobileNumberTextView)
+    TextView mMobileNumberTextView;
+
+    @BindView(R.id.nameTextView)
+    TextView mNameTextView;
+
+    @BindView(R.id.emailTextView)
+    TextView mEmailTextView;
 
     @Override
     protected int getLayoutResourceId() {
@@ -85,6 +102,11 @@ public class ProfileActivity extends BaseActivity implements ProfileView {
     public void showGetUserSuccess(User user) {
         dismissProgressDialog();
         mUser = user;
+
+        Glide.with(mContext).load(mUser.getAvatarUrl()).into(mAvatarImageView);
+        mMobileNumberTextView.setText(mUser.getMobileNumber());
+        mNameTextView.setText(mUser.getFirstName() + " " + mUser.getLastName());
+        mEmailTextView.setText(mUser.getEmail());
     }
 
     @Override

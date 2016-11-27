@@ -14,6 +14,14 @@ public class MobileNumberVerification {
     @SerializedName("code")
     private String mVerificationCode;
 
+    public MobileNumberVerification(String mobileNumber, String verificationCode) {
+        mMobileNumber = mobileNumber;
+        mVerificationCode = verificationCode;
+    }
+
+    public MobileNumberVerification() {
+    }
+
     public String getMobileNumber() {
         return mMobileNumber;
     }
