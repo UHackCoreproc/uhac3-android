@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import java.util.List;
 
@@ -53,7 +54,7 @@ public class TransactionAdapter extends RecyclerView.Adapter<TransactionAdapter.
     @Override
     public void onBindViewHolder(TransactionViewHolder holder, int position) {
         Transaction transaction = mTransactionList.get(position);
-
+        holder.mSourceTextView.setText(transaction.getReferenceNumber());
     }
 
     @Override
@@ -71,6 +72,18 @@ public class TransactionAdapter extends RecyclerView.Adapter<TransactionAdapter.
 
         @BindView(R.id.containerView)
         LinearLayout mContainerView;
+
+        @BindView(R.id.statusTextView)
+        TextView mStatusTextView;
+
+        @BindView(R.id.sourceTextView)
+        TextView mSourceTextView;
+
+        @BindView(R.id.recipientTextView)
+        TextView mRecipientTextView;
+
+        @BindView(R.id.amountTextView)
+        TextView mAmountTextView;
 
         interface Callback {
             void onTransactionClicked(int position);
