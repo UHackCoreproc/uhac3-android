@@ -16,6 +16,7 @@ import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -57,6 +58,9 @@ public class TransactionListActivity extends BaseActivity implements Transaction
 
     @BindView(R.id.accountTypeTextView)
     TextView mAccountTypeTextView;
+
+    @BindView(R.id.amountTextView)
+    TextView mAmountTextView;
 
     @BindView(R.id.swipeRefreshLayout)
     SwipeRefreshLayout mSwipeRefreshLayout;
@@ -132,6 +136,14 @@ public class TransactionListActivity extends BaseActivity implements Transaction
         }
         mAccountNoTextView.setText(mAccount.getAccountNumber());
         mAccountTypeTextView.setText(mAccount.getAccountType().getName());
+        if (mAccount.getBalance() != null) {
+            mAmountTextView.setText(toPesoFormat(mAccount.getBalance()));
+            mAmountTextView.setVisibility(View.VISIBLE);
+        }
+    }
+
+    private String toPesoFormat(double peso) {
+        return "₱" + new DecimalFormat("#,###,##0.00").format(peso);
     }
 
     private void initRecyclerView(RecyclerView recyclerView) {
