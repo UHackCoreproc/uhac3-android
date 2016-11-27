@@ -7,9 +7,6 @@ import com.google.gson.annotations.SerializedName;
  */
 public class User {
 
-    @SerializedName("id")
-    private long mUserId;
-
     @SerializedName("email")
     private String mEmail;
 
@@ -26,14 +23,6 @@ public class User {
     private MobileNumberVerification mMobileNumberVerification;
 
     private Authorization mAuthorization;
-
-    public long getUserId() {
-        return mUserId;
-    }
-
-    public void setUserId(long userId) {
-        mUserId = userId;
-    }
 
     public Authorization getAuthorization() {
         return mAuthorization;

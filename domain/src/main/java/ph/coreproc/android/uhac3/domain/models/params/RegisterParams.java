@@ -11,10 +11,10 @@ public class RegisterParams {
     @SerializedName("email")
     private String mEmail;
 
-    @SerializedName("contact_no")
+    @SerializedName("mobile_number")
     private String mContactNo;
 
-    @SerializedName("verification_code")
+    @SerializedName("code")
     private String mVeficationCode;
 
     @SerializedName("first_name")
@@ -26,7 +26,7 @@ public class RegisterParams {
     @SerializedName("password")
     private String mPassword;
 
-    @SerializedName("confirm_password")
+    @SerializedName("password_confirmation")
     private String mConfirmPassword;
 
     public RegisterParams(String email, String contactNo, String veficationCode,

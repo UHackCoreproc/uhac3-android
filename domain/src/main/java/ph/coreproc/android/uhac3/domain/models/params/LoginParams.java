@@ -8,7 +8,7 @@ import com.google.gson.annotations.SerializedName;
 
 public class LoginParams {
 
-    @SerializedName("username")
+    @SerializedName("email")
     private String mUsername;
 
     @SerializedName("password")

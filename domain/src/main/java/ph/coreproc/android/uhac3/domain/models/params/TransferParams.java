@@ -16,6 +16,8 @@ public class TransferParams {
     @SerializedName("recipient")
     private Account mRecipientAccount;
 
+
+
     @SerializedName("mobile_number")
     private String mMobileNumber;
 

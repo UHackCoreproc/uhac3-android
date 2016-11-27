@@ -20,6 +20,9 @@ public class Account {
     @SerializedName("account_number")
     private String mAccountNumber;
 
+    @SerializedName("account_type_id")
+    private String mAccountTypeId;
+
     @SerializedName("accountType")
     private AccountType mAccountType;
 
@@ -36,6 +39,7 @@ public class Account {
         mDescription = description;
         mAccountNumber = accountNumber;
         mAccountType = accountType;
+        mAccountTypeId = "" + mAccountType.getId();
         mBalance = null;
     }
 

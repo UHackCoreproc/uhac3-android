@@ -26,49 +26,49 @@ public interface ApiService {
 
     String AUTHORIZATION = "X-Authorization";
 
-    @POST("api/")
+    @POST("api/v1/auth/login")
     Observable<Response<User>> register(
             @Body RegisterParams registerParams
     );
 
-    @POST("api/")
+    @POST("api/v1/auth/login")
     Observable<Response<User>> login(
             @Body LoginParams loginParams
     );
 
-    @GET("api/")
+    @GET("api/v1/accounts")
     Observable<Response<List<Account>>> getAccountList();
 
     @FormUrlEncoded
-    @POST("api/")
+    @POST("api/v1/accounts/get-by-mobile-number")
     Observable<Response<List<Account>>> getAccountListOfContact(
             @Field("mobile_number") String mobileNumber
     );
 
-    @GET("api/")
+    @POST("api/v1/accounts")
     Observable<Response<Account>> createAccount(
             @Body Account account
     );
 
-    @POST("api/")
+    @POST("api/v1/")
     Observable<Response<Transaction>> tranfer(
             @Body TransferParams transferParams
     );
 
-    @POST("api/")
+    @POST("api/v1/")
     Observable<Response<Transaction>> redeemCoupon(
             @Body RedeemCouponParams redeemCouponParams
     );
 
-    @GET("api/")
+    @GET("api/v1/")
     Observable<Response<List<Transaction>>> getTransactionList();
 
-    @GET("api/")
+    @GET("api/v1/")
     Observable<Response<List<Transaction>>> getTransactionList(
             @Body Account account
     );
 
-    @POST("api/")
+    @POST("api/v1/")
     Observable<Response<MobileNumberVerification>> verifyMobileNumber(
             @Body VerifyMobileNumberParams verifyMobileNumberParams
     );
