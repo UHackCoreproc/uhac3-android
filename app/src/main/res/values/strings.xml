@@ -33,6 +33,8 @@
     <!-- Register -->
     <string name="activity_register_title">Register</string>
     <string name="register_label_email">Email</string>
+    <string name="register_label_first_name">First Name</string>
+    <string name="register_label_last_name">Last Name</string>
     <string name="register_label_account_no">Account Number</string>
     <string name="register_label_contact_no">Contact Number</string>
     <string name="register_label_password">Password</string>

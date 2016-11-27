@@ -52,6 +52,36 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/spacing_medium"
+                android:text="@string/register_label_first_name"/>
+
+            <EditText
+                android:id="@+id/firstNameEditText"
+                style="@style/EditText.Primary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_small"
+                android:inputType="textEmailAddress"/>
+
+            <TextView
+                style="@style/TextView.InputLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_medium"
+                android:text="@string/register_label_last_name"/>
+
+            <EditText
+                android:id="@+id/lastNameEditText"
+                style="@style/EditText.Primary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_small"
+                android:inputType="textEmailAddress"/>
+
+            <TextView
+                style="@style/TextView.InputLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_medium"
                 android:text="@string/register_label_password"/>
 
             <EditText

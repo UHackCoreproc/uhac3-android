@@ -40,6 +40,12 @@ public class RegisterActivity extends BaseActivity implements RegisterView {
     @BindView(R.id.contactNoEditText)
     EditText mContactNoEditText;
 
+    @BindView(R.id.firstNameEditText)
+    EditText mFirstNameEditText;
+
+    @BindView(R.id.lastNameEditText)
+    EditText mLastNameEditText;
+
     @BindView(R.id.passwordEditText)
     EditText mPasswordEditText;
 
@@ -101,6 +107,8 @@ public class RegisterActivity extends BaseActivity implements RegisterView {
         String email = mEmailEditText.getText().toString();
         String password = mPasswordEditText.getText().toString();
         String confirmPassword = mConfirmPasswordEditText.getText().toString();
+        String firstName = mFirstNameEditText.getText().toString();
+        String lastName = mLastNameEditText.getText().toString();
 
         String errorMessages = "";
         if (email.isEmpty()) {
@@ -114,6 +122,14 @@ public class RegisterActivity extends BaseActivity implements RegisterView {
             errorMessages += (errorMessages.isEmpty() ? "" : "\n");
             errorMessages += "Confirm Password is required.";
         }
+        if (firstName.isEmpty()) {
+            errorMessages += (errorMessages.isEmpty() ? "" : "\n");
+            errorMessages += "First Name is required.";
+        }
+        if (lastName.isEmpty()) {
+            errorMessages += (errorMessages.isEmpty() ? "" : "\n");
+            errorMessages += "Last Name is required.";
+        }
         if (!errorMessages.isEmpty()) {
             showAlertDialog(getString(R.string.global_dialog_title_error),
                     errorMessages);
@@ -121,7 +137,8 @@ public class RegisterActivity extends BaseActivity implements RegisterView {
         }
 
         RegisterParams registerParams = new RegisterParams(email,
-                mMobileNumber, mVerificationCode, password, confirmPassword);
+                mMobileNumber, mVerificationCode, firstName, lastName,
+                password, confirmPassword);
         mRegisterPresenter.register(registerParams);
     }
 
