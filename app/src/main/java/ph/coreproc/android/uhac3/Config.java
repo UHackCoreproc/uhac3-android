@@ -10,8 +10,8 @@ import rx.schedulers.Schedulers;
 public class Config {
 
     // MARK: - API
-    public static final String BASE_URL_LIVE = "https://oceanictracking.herokuapp.com/";
-    public static final String BASE_URL_DEV = "https://oceanictracking.herokuapp.com/";
+    public static final String BASE_URL_LIVE = "https://ggpay.coreproc.ph/";
+    public static final String BASE_URL_DEV = "https://ggpay.coreproc.ph/";
     // MARK: - End API
 
 
@@ -25,7 +25,7 @@ public class Config {
 
 
     // MARK: Preferences
-    public static final String PREFERENCES_PACKAGE = "ph.coreproc.android.oceanic";
+    public static final String PREFERENCES_PACKAGE = "ph.coreproc.android.ggpay";
     // MARK: End Preferences
 
 
