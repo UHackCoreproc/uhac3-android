@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <color name="primary">#3F51B5</color>           <!-- color of toolbar -->
-    <color name="primary_dark">#283593</color>      <!-- color of status bar -->
-    <color name="primary_light">#E8EAF6</color>
-    <color name="accent">#009688</color>            <!-- tint of views -->
+    <color name="primary">#F27C33</color>           <!-- color of toolbar -->
+    <color name="primary_dark">#F16F1E</color>      <!-- color of status bar -->
+    <color name="primary_light">#FBD7C1</color>
+    <color name="accent">#574D88</color>            <!-- tint of views -->
+    <color name="accent_dark">#4F467C</color>            <!-- tint of views -->
     <color name="text_primary">@color/primary</color>
     <color name="text_secondary">#727272</color>
     <color name="divider">#B6B6B6</color>
@@ -14,9 +15,9 @@
 
     <color name="activity_background">#EEEEEE</color>
 
-    <color name="button_primary_background">@color/primary</color>
-    <color name="button_primary_background_pressed">@color/primary_dark</color>
-    <color name="button_primary_background_focused">@color/primary_dark</color>
+    <color name="button_primary_background">@color/accent</color>
+    <color name="button_primary_background_pressed">@color/accent_dark</color>
+    <color name="button_primary_background_focused">@color/accent_dark</color>
     <color name="button_primary_text">#FFFFFF</color>
 
     <color name="button_danger_background">#E57373</color>
