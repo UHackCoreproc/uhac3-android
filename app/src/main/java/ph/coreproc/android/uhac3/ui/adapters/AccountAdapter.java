@@ -6,11 +6,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
+import android.widget.TextView;
+
+import com.bumptech.glide.Glide;
 
 import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import de.hdodenhof.circleimageview.CircleImageView;
 import ph.coreproc.android.uhac3.R;
 import ph.coreproc.android.uhac3.domain.models.Account;
 
@@ -53,7 +57,14 @@ public class AccountAdapter extends RecyclerView.Adapter<AccountAdapter.AccountV
     @Override
     public void onBindViewHolder(AccountViewHolder holder, int position) {
         Account account = mAccountList.get(position);
-
+        if (account.getAccountType().getId() == 1) {
+            Glide.with(mContext).load(R.drawable.ic_unionbank).into(holder.mImageView);
+        } else {
+            Glide.with(mContext).load(R.drawable.ic_credit_card).into(holder.mImageView);
+        }
+        holder.mTitleTextView.setText(account.getTitle());
+        holder.mAccountNoTextView.setText(account.getAccountNumber());
+        holder.mAccountTypeTextView.setText(account.getAccountType().getName());
     }
 
     @Override
@@ -71,6 +82,18 @@ public class AccountAdapter extends RecyclerView.Adapter<AccountAdapter.AccountV
 
         @BindView(R.id.containerView)
         LinearLayout mContainerView;
+
+        @BindView(R.id.imageView)
+        CircleImageView mImageView;
+
+        @BindView(R.id.titleTextView)
+        TextView mTitleTextView;
+
+        @BindView(R.id.accountNoTextView)
+        TextView mAccountNoTextView;
+
+        @BindView(R.id.accountTypeTextView)
+        TextView mAccountTypeTextView;
 
         interface Callback {
             void onAccountClicked(int position);

@@ -95,7 +95,7 @@
     <!-- End Transfer -->
 
     <!-- Add Account -->
-    <string name="activity_title_add_account">Add Account</string>
+    <string name="activity_title_add_account">Add\nAccount</string>
     <string name="add_account_label_title">Title</string>
     <string name="add_account_label_description">Description</string>
     <string name="add_account_label_account_no">Account Number</string>

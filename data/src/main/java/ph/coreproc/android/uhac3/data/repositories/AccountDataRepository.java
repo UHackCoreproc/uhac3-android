@@ -30,11 +30,11 @@ public class AccountDataRepository implements AccountRepository {
     @Override
     public Observable<List<Account>> getAccountList() {
         List<Account> accountList = new ArrayList<>();
-        for (int i = 0; i < 10; i++) {
+        for (int i = 1; i <= 3; i++) {
             Account account = new Account();
             account.setTitle("Hello Card");
             account.setAccountNumber("123");
-            account.setAccountType(new AccountType(1, "Type 1"));
+            account.setAccountType(new AccountType(i, "Type " + i));
             accountList.add(account);
         }
         return Observable.just(accountList);
