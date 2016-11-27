@@ -15,9 +15,12 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
+
 import javax.inject.Inject;
 
 import butterknife.BindView;
+import de.hdodenhof.circleimageview.CircleImageView;
 import ph.coreproc.android.uhac3.R;
 import ph.coreproc.android.uhac3.domain.models.User;
 import ph.coreproc.android.uhac3.ui.BaseActivity;
@@ -168,11 +171,17 @@ public class HomeActivity extends BaseActivity implements HomeView {
                 headerView.findViewById(R.id.nameTextView);
         TextView emailTextView = (TextView)
                 headerView.findViewById(R.id.emailTextView);
+        CircleImageView circleImageView = (CircleImageView)
+                headerView.findViewById(R.id.cirleImageView);
 
         User user = mHomePresenter.getLoggedInUser();
         if (user != null) {
-            nameTextView.setText("");
-            emailTextView.setText("");
+            nameTextView.setText(user.getFirstName() != null && user.getLastName() != null ?
+                    user.getFirstName() + " " + user.getLastName() : "");
+            emailTextView.setText(user.getEmail() != null ? user.getEmail() : "");
+            if (user.getAvatarUrl() != null) {
+                Glide.with(mContext).load(user.getAvatarUrl()).into(circleImageView);
+            }
         } else {
             logout();
         }

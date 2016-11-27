@@ -108,6 +108,7 @@ dependencies {
     compile appDependencies.customActivityOnCrash
     compile appDependencies.glide
     compile appDependencies.firebase
+    compile appDependencies.circleImageView
 
     compile appDependencies.rxJavaProguard
 
