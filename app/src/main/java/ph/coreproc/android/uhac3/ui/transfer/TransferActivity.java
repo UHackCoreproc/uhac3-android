@@ -1,9 +1,11 @@
 package ph.coreproc.android.uhac3.ui.transfer;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v7.app.AlertDialog;
 import android.view.MenuItem;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -172,11 +174,20 @@ public class TransferActivity extends BaseActivity implements TransferView {
     @Override
     public void showTransferSuccess(Transaction transaction) {
         dismissProgressDialog();
-        Toast.makeText(mContext, "Success", Toast.LENGTH_SHORT)
-                .show();
-        Intent intent = HomeActivity.newIntent(mContext, true);
-        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-        startActivity(intent);
+        AlertDialog alertDialog = new AlertDialog.Builder(mContext)
+                .setTitle(getString(R.string.global_dialog_title_success))
+                .setMessage("Successful Transaction!")
+                .setPositiveButton(getString(R.string.global_dialog_action_ok),
+                        new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                Intent intent = HomeActivity.newIntent(mContext, true);
+                                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                                startActivity(intent);
+                            }
+                        })
+                .create();
+        showAlertDialog(alertDialog);
     }
 
     @Override

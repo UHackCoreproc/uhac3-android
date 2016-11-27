@@ -5,22 +5,13 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 
-import java.util.Collections;
-import java.util.List;
-
 import javax.inject.Inject;
 
 import ph.coreproc.android.uhac3.R;
-import ph.coreproc.android.uhac3.domain.errors.ErrorBundle;
-import ph.coreproc.android.uhac3.domain.interactors.DefaultSubscriber;
 import ph.coreproc.android.uhac3.domain.models.User;
-import ph.coreproc.android.uhac3.models.Contact;
 import ph.coreproc.android.uhac3.ui.BaseActivity;
 import ph.coreproc.android.uhac3.ui.home.HomeActivity;
 import ph.coreproc.android.uhac3.ui.login.LoginActivity;
-import ph.coreproc.android.uhac3.util.ContactsGetter;
-import rx.android.schedulers.AndroidSchedulers;
-import rx.schedulers.Schedulers;
 
 /**
  * Created by johneris on 06/11/2016.
@@ -50,24 +41,6 @@ public class MainActivity extends BaseActivity implements MainView {
 
         initUI();
         mMainPresenter.checkLoggedInUser();
-
-        if (ContactsGetter.sContactList == null) {
-            ContactsGetter.getContacts(mContext)
-                    .subscribeOn(Schedulers.io())
-                    .observeOn(AndroidSchedulers.mainThread())
-                    .subscribe(new DefaultSubscriber<List<Contact>>() {
-                        @Override
-                        public void onError(ErrorBundle errorBundle) {
-
-                        }
-
-                        @Override
-                        public void onNext(List<Contact> contactList) {
-                            Collections.sort(contactList);
-                            ContactsGetter.sContactList = contactList;
-                        }
-                    });
-        }
     }
 
     @Override

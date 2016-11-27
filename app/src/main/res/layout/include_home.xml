@@ -16,7 +16,7 @@
             android:layout_height="wrap_content"
             android:background="@color/primary"
             app:tabGravity="fill"
-            app:tabIndicatorHeight="@dimen/spacing_small"
+            app:tabIndicatorHeight="@dimen/spacing_xsmall"
             app:tabMaxWidth="0dp"
             app:tabMode="fixed"
             app:tabSelectedTextColor="@color/white"

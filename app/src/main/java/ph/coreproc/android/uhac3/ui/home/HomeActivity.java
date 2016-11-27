@@ -17,12 +17,18 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 
+import java.util.Collections;
+import java.util.List;
+
 import javax.inject.Inject;
 
 import butterknife.BindView;
 import de.hdodenhof.circleimageview.CircleImageView;
 import ph.coreproc.android.uhac3.R;
+import ph.coreproc.android.uhac3.domain.errors.ErrorBundle;
+import ph.coreproc.android.uhac3.domain.interactors.DefaultSubscriber;
 import ph.coreproc.android.uhac3.domain.models.User;
+import ph.coreproc.android.uhac3.models.Contact;
 import ph.coreproc.android.uhac3.ui.BaseActivity;
 import ph.coreproc.android.uhac3.ui.account_list.AccountListFragment;
 import ph.coreproc.android.uhac3.ui.adapters.ViewPagerAdapter;
@@ -30,6 +36,9 @@ import ph.coreproc.android.uhac3.ui.add_account.AddAccountActivity;
 import ph.coreproc.android.uhac3.ui.profile.ProfileActivity;
 import ph.coreproc.android.uhac3.ui.redeem_coupon.RedeemCouponActivity;
 import ph.coreproc.android.uhac3.ui.transaction_list.TransactionListFragment;
+import ph.coreproc.android.uhac3.util.ContactsGetter;
+import rx.android.schedulers.AndroidSchedulers;
+import rx.schedulers.Schedulers;
 
 /**
  * Created by johneris on 09/10/2016.
@@ -84,6 +93,24 @@ public class HomeActivity extends BaseActivity implements HomeView {
         mHomePresenter.setHomeView(this);
 
         initUI();
+
+        if (ContactsGetter.sContactList == null) {
+            ContactsGetter.getContacts(mContext)
+                    .subscribeOn(Schedulers.io())
+                    .observeOn(AndroidSchedulers.mainThread())
+                    .subscribe(new DefaultSubscriber<List<Contact>>() {
+                        @Override
+                        public void onError(ErrorBundle errorBundle) {
+
+                        }
+
+                        @Override
+                        public void onNext(List<Contact> contactList) {
+                            Collections.sort(contactList);
+                            ContactsGetter.sContactList = contactList;
+                        }
+                    });
+        }
     }
 
     @Override

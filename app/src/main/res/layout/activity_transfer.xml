@@ -43,7 +43,7 @@
                 style="@style/TextView.Body"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/spacing_medium"
+                android:layout_marginTop="@dimen/spacing_xlarge"
                 android:gravity="center"
                 android:text="You are about to transfer"/>
 
@@ -64,7 +64,7 @@
                 style="@style/TextView.H2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/spacing_medium"
+                android:layout_marginTop="@dimen/spacing_small"
                 android:gravity="center"
                 android:text="TO: 09753966346"/>
 
@@ -73,7 +73,7 @@
                 style="@style/TextView.H2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/spacing_medium"
+                android:layout_marginTop="@dimen/spacing_xlarge"
                 android:text="Remarks: 09753966346"/>
 
             <Button

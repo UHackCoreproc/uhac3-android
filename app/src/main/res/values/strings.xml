@@ -89,7 +89,7 @@
     <!-- End Select Contact -->
 
     <!-- Amount -->
-    <string name="activity_amount_remarks_title">Amount</string>
+    <string name="activity_amount_remarks_title">Money Transfer</string>
     <!-- End Amount -->
 
     <!-- Transfer -->
